@@ -1,0 +1,34 @@
+<div class="template" id="simple_leave_application_with_role">
+    <div class="node START" id="start">
+        <p>START</p>
+    </div>
+    <div class="node ACTION" id="apply" style="z-index: 0; left: 220px; top: 100px;">
+        <p>Apply leave</p>
+        <div class="kvars">ICAgICAgICAgICAgeyJkYXlzIjogMywgCiAgICAgICAgInJlYXNvbiI6ICJzZWUgcGFyZW50In0=</div>
+    </div>
+    <div class="node ACTION" id="approve_by_leader" role="LEADER" style="z-index: 0; left: 420px; top: 100px;">
+        <p>Approve leave Team Leader</p>
+    </div>
+    <div class="node ACTION" id="approve_by_director" role="DIRECTOR" style="z-index: 0; left: 420px; top: 520px;">
+        <p>Approve leave by Director</p>
+    </div>
+    <div class="node ACTION BYALL" id="approve_by_director2" role="DIRECTOR" style="z-index: 0; left: 620px; top: 520px;">
+        <p>Approve leave by Director2</p>
+    </div>
+    <div class="node INFORM" id="inform1" style="z-index: 0; left: 740px; top: 340px;"></div>
+    <div class="node SCRIPT" id="switch1" style="z-index: 0; left: 220px; top: 340px;">
+        <code>cmV0dXJuIChrdmFycy5kYXlzPDUpPydub19uZWVkX2RpcmVjdG9yJzonbmVlZF9kaXJlY3Rvcic7Cg==</code>
+    </div>
+    <div class="node END" id="end" style="z-index: 0; left: 960px; top: 200px;">
+        <p>END</p>
+    </div>
+    <div class="link" from="start" to="apply"></div>
+    <div class="link" from="apply" to="approve_by_leader"></div>
+    <div class="link" from="approve_by_leader" to="inform1" case="reject"></div>
+    <div class="link" from="approve_by_leader" to="switch1" case="approve"></div>
+    <div class="link" from="switch1" to="approve_by_director" case="need_director"></div>
+    <div class="link" from="switch1" to="inform1" case="no_need_director"></div>
+    <div class="link" from="approve_by_director" to="approve_by_director2"></div>
+    <div class="link" from="inform1" to="end"></div>
+    <div class="link" from="approve_by_director2" to="inform1"></div>
+</div>

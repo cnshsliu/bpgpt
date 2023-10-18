@@ -1,0 +1,38 @@
+<div class="template" id="parent_1">
+    <div class="node START" id="start">
+        <p>START</p>
+    </div>
+    <div class="node ACTION" id="action1" style="z-index: 0; left: 240px; top: 100px;">
+        <p>Action1</p>
+    </div>
+    <div class="node SUB" id="sub1" sub="sub_1" style="z-index: 0; left: 240px; top: 320px;">
+        <p>sub_1</p>
+    </div>
+    <div class="node ACTION" id="action2" style="z-index: 0; left: 240px; top: 520px;">
+        <p>Action2</p>
+    </div>
+    <div class="node SUB" id="sub2" sub="sub_1" style="z-index: 0; left: 400px; top: 520px;">
+        <p>sub_1</p>
+    </div>
+    <div class="node ACTION" id="action31" style="z-index: 0; left: 500px; top: 620px;">
+        <p>Action31</p>
+    </div>
+    <div class="node ACTION" id="action32" style="z-index: 0; left: 480px; top: 360px;">
+        <p>Action32</p>
+    </div>
+    <div class="node OR" id="or1" style="z-index: 0; left: 640px; top: 520px;">
+        <p>Or 1</p>
+    </div>
+    <div class="node END" id="end" style="z-index: 0; left: 800px; top: 520px;">
+        <p>END</p>
+    </div>
+    <div class="link" from="start" to="action1"></div>
+    <div class="link" from="action1" to="sub1"></div>
+    <div class="link" from="sub1" to="action2"></div>
+    <div class="link" from="action2" to="sub2"></div>
+    <div class="link" from="sub2" to="action31" case="goto31"></div>
+    <div class="link" from="sub2" to="action32" case="goto32"></div>
+    <div class="link" from="action32" to="or1"></div>
+    <div class="link" from="action31" to="or1"></div>
+    <div class="link" from="or1" to="end"></div>
+</div>

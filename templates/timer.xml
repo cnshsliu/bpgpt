@@ -1,0 +1,29 @@
+<div class="template" id="test_timer">
+    <div class="node START" id="start">
+        <p>START</p>
+    </div>
+    <div class="node ACTION" id="action1" style="z-index: 0; left: 200px; top: 300px;">
+        <p>Action1</p>
+    </div>
+    <div class="node TIMER" id="timer1" style="z-index: 0; left: 300px; top: 440px;">
+        <code>+0:0:0:0:0:10</code>
+    </div>
+    <div class="node TIMER" id="timer2" style="z-index: 0; left: 520px; top: 440px;">
+        <code>start+0:0:0:0:0:15</code>
+    </div>
+    <div class="node ACTION" id="action2" style="z-index: 0; left: 420px; top: 280px;">
+        <p>Action2</p>
+    </div>
+    <div class="node ACTION" id="action3" style="z-index: 0; left: 600px; top: 300px;">
+        <p>Action3</p>
+    </div>
+    <div class="node END" id="end" style="z-index: 0; left: 760px; top: 100px;">
+        <p>END</p>
+    </div>
+    <div class="link" from="start" to="action1"></div>
+    <div class="link" from="action1" to="timer1"></div>
+    <div class="link" from="timer1" to="action2"></div>
+    <div class="link" from="action2" to="timer2"></div>
+    <div class="link" from="timer2" to="action3"></div>
+    <div class="link" from="action3" to="end"></div>
+</div>

@@ -1,0 +1,32 @@
+<div class="template" id="script1">
+  <div class="node START" id="start">
+    <p>START</p>
+  </div>
+  <div class="node ACTION" id="action1" style="z-index: 0; left: 100px; top: 340px;">
+    <p>Apply leave</p>
+  </div>
+  <div class="node SCRIPT" id="script1" style="z-index: 0; left: 300px; top: 380px;">
+    <code>
+YXdhaXQgRU1QLmxvZ2luKCJsaXVrZWhvbmdAZ21haWwuY29tIiwgIkplcm9tZUA5OSIpOwogICAgbGV0IHRtcCAgPSBhd2FpdCBFTVAucG9zdCgiaHR0cDovL2xvY2FsaG9zdDo1MDA4L2RlbW8vYXBpIik7CiAgICByZXQgPSB0bXAuaW50dj09PTEwMD8iWUVTIjoiTk8iOw==
+    </code>
+  </div>
+  <div class="node ACTION" id="actionYES" style="z-index: 0; left: 560px; top: 360px;">
+    <p>YES</p>
+  </div>
+  <div class="node ACTION" id="actionNO" style="z-index: 0; left: 580px; top: 360px&lt;p&gt;;">
+  <p></p>NO</div>
+  <div class="node ACTION" id="actionERROR" style="z-index: 0; left: 580px; top: 520px;">
+    <p>NO</p>
+  </div>
+  <div class="node END" id="end">
+    <p>END</p>
+  </div>
+  <div class="link" from="start" to="action1"></div>
+  <div class="link" from="action1" to="script1"></div>
+  <div class="link" from="script1" to="actionYES" case="YES"></div>
+  <div class="link" from="script1" to="actionNO" case="NO"></div>
+  <div class="link" from="script1" to="actionERROR" case="ERROR"></div>
+  <div class="link" from="actionYES" to="end"></div>
+  <div class="link" from="actionNO" to="end"></div>
+  <div class="link" from="actionERROR" to="end"></div>
+</div>

@@ -1,0 +1,12 @@
+<div class='template' id='test_timer'>
+    <div class='node START' id='start'> START </div>
+    <div class='node ACTION' id='action1'> Action1 </div>
+    <div class='node ACTION' id='action2'> Action2 </div>
+    <div class='node END' id='end'> END </div>
+
+    <div class='link' from='start' to='action1'></div>
+    <div class='link' from='action1' to='action2'></div>
+    <div class='link' from='action2' to='end'></div>
+</div>
+<div>
+

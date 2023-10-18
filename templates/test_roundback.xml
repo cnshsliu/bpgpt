@@ -1,0 +1,26 @@
+<div class="template" id="test_roundback">
+    <div class="node START" id="start" style="z-index: 0; left: 120px; top: 320px;">
+        <p>START</p>
+    </div>
+    <div class="node ACTION" id="action1" style="z-index: 0; left: 240px; top: 320px;">
+        <p>Action1</p>
+    </div>
+    <div class="node SCRIPT" id="switch1" style="z-index: 0; left: 460px; top: 400px;">
+        <code>cmV0dXJuIChrdmFycy5kYXlzLnZhbHVlPDUpPyd0b19lbmQnOid0b19hY3Rpb24yJzs=</code>
+    </div>
+    <div class="node ACTION" id="action2" style="z-index: 0; left: 580px; top: 240px;">
+        <p>Action2</p>
+    </div>
+    <div class="node ACTION" id="action3" style="z-index: 0; left: 420px; top: 160px;">
+        <p>Action3</p>
+    </div>
+    <div class="node END" id="end" style="z-index: 0; left: 680px; top: 620px;">
+        <p>END</p>
+    </div>
+    <div class="link" from="start" to="action1"></div>
+    <div class="link" from="action1" to="switch1"></div>
+    <div class="link" from="action3" to="action1"></div>
+    <div class="link" from="action2" to="action3"></div>
+    <div class="link" from="switch1" to="action2" case="to_action2"></div>
+    <div class="link" from="switch1" to="end" case="to_end"></div>
+</div>

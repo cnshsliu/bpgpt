@@ -1,0 +1,44 @@
+<div class="template" id="multi_vars_director_has_vars">
+    <div class="node START" id="start">
+        <p>START</p>
+    </div>
+    <div class="node ACTION" id="apply" style="z-index: 0; left: 100px; top: 360px;">
+        <p>Apply leave with multi kvars</p>
+        <div class="kvars">
+
+ICAgICAgICAgICAgewogICAgICAgICAgICAiZGF5cyI6eyAidmFsdWUiOiAzLCJsYWJlbCI6ICJob3cgbWFueSBkYXlzIHRvIGxlYXZlPyJ9LAogICAgICAgICAgICAicmVhc29uIjp7ICJ2YWx1ZSI6ICJzZWUgcGFyZW50IiwgImxhYmVsIjoid2hhdCByZWFzb24gZm9yIHRoaXMgbGVhdmU/In0sCiAgICAgICAgICAgICJlbWFpbF92YXIiOnsgInZhbHVlIjogIiIsICJsYWJlbCI6InVtYWlsIHZhciIsICJicmVhayI6dHJ1ZX0sCiAgICAgICAgICAgICJwYXNzd29yZF92YXIiOnsgInZhbHVlIjogIiIsICJsYWJlbCI6InBhc3N3b3JkIHZhciIsICJicmVhayI6dHJ1ZX0sCiAgICAgICAgICAgICJ1cmxfdmFyIjp7ICJ2YWx1ZSI6ICIiLCAibGFiZWwiOiJ1cmwgdmFyIiwgInBsYWNlaG9sZGVyIjogInVybCBwbGFjZWhvbGRlciJ9LAogICAgICAgICAgICAicmFuZ2VfdmFyIjp7ICJ2YWx1ZSI6ICIiLCAibGFiZWwiOiJyYW5nZSB2YXIifSwKICAgICAgICAgICAgIm51bWJlcl92YXIiOnsgInZhbHVlIjogIiIsICJsYWJlbCI6Im51bWJlciB2YXIifSwKICAgICAgICAgICAgImRhdGV0aW1lX3ZhciI6eyAidmFsdWUiOiAiIiwgImxhYmVsIjoiZGF0ZXRpbWUgdmFyIn0sCiAgICAgICAgICAgICJkYXRlX3ZhciI6eyAidmFsdWUiOiAiIiwgImxhYmVsIjoiZGF0ZSB2YXIifSwKICAgICAgICAgICAgInRpbWVfdmFyIjp7ICJ2YWx1ZSI6ICIiLCAibGFiZWwiOiJ0aW1lIHZhciJ9LAogICAgICAgICAgICAiY29sb3JfdmFyIjp7ICJ2YWx1ZSI6ICIiLCAibGFiZWwiOiJjb2xvciB2YXIifSwKICAgICAgICAgICAgInNlYXJjaF92YXIiOnsgInZhbHVlIjogIiIsICJsYWJlbCI6InNlYXJjaCB2YXIiLCAiaWQiOiAibXlfc2VhY2gifSwKICAgICAgICAgICAgInNlbGVjdF92YXIiOnsgInZhbHVlIjogMywgImxhYmVsIjoic2VsZWN0IHZhciIsICJpZCI6ICJbd29ya2lkXV9teV9zZWxlY3QiLCAib3B0aW9ucyI6WyJBMSIsIDEsIDIsIDMsICJCMSIsIkIyIl19LAogICAgICAgICAgICAidGV4dGFyZWFfdmFyIjp7ICJ2YWx1ZSI6ICIiLCAibGFiZWwiOiJ0ZXh0YXJlYSB2YXIifSwKICAgICAgICAgICAgImZpbGVfdmFyIjp7ICJ2YWx1ZSI6ICIiLCAibGFiZWwiOiJmaWxlIHZhciJ9LAogICAgICAgICAgICAicmFkaW9fdmFyIjp7ICJ2YWx1ZSI6ICIiLCAibGFiZWwiOiJyYWRpbyB2YXIifSwKICAgICAgICAgICAgImNoZWNrYm94X3ZhciI6eyAidmFsdWUiOiAiIiwgImxhYmVsIjoiY2hlY2tib3ggdmFyIn0sCiAgICAgICAgICAgICJkYXlzMiI6IDIyLAogICAgICAgICAgICAicmVhc29uMiI6ICJzZWUgcGFyZW50MiIsCiAgICAgICAgICAgICJkYXkzIjogeyJ2YWx1ZSI6IDMyfSwKICAgICAgICAgICAgInJlYXNvbjMiOiAic2VlIHBhcmVudDMiLAogICAgICAgICAgICAicmVhc29uNCI6IHsidmFsdWUiOiAic2VlIHBhcmVudDQifQogICAgICAgICAgICB9Cg=
+
+        </div>
+    </div>
+    <div class="node ACTION" id="approve_by_leader" style="z-index: 0; left: 280px; top: 360px;">
+        <p>Approve leave Team Leader</p>
+        <div class="kvars">
+
+ICAgICAgICAgICAgewogICAgICAgICAgICAibGVhZGVyX2NvbW1lbnQiOnsgInZhbHVlIjogIiIsICJsYWJlbCI6Iue7hOmVv+eahOivhOivrSJ9CiAgICAgICAgICAgIH0K
+
+        </div>
+    </div>
+    <div class="node ACTION" id="approve_by_director" style="z-index: 0; left: 720px; top: 720px;">
+        <p>Approve leave by Director2</p>
+        <div class="kvars">
+
+ICAgICAgICAgICAgewogICAgICAgICAgICAiZGlyZWN0b3JfY29tbWVudCI6eyAidmFsdWUiOiAiIiwgImxhYmVsIjoi5oC755uR55qE6K+E6K+tIn0KICAgICAgICAgICAgfQo=
+
+        </div>
+    </div>
+    <div class="node INFORM" id="inform1" style="z-index: 0; left: 860px; top: 440px;"></div>
+    <div class="node SCRIPT" id="switch1" style="z-index: 0; left: 340px; top: 600px;">
+        <code>cmV0dXJuIChrdmFycy5kYXlzLnZhbHVlPDUpPydub19uZWVkX2RpcmVjdG9yJzonbmVlZF9kaXJlY3Rvcic7</code>
+    </div>
+    <div class="node END" id="end" style="z-index: 0; left: 1040px; top: 440px;">
+        <p>END</p>
+    </div>
+    <div class="link" from="start" to="apply"></div>
+    <div class="link" from="apply" to="approve_by_leader"></div>
+    <div class="link" from="approve_by_leader" to="inform1" case="reject"></div>
+    <div class="link" from="approve_by_leader" to="switch1" case="approve"></div>
+    <div class="link" from="approve_by_director" to="inform1"></div>
+    <div class="link" from="switch1" to="approve_by_director" case="need_director"></div>
+    <div class="link" from="switch1" to="inform1" case="no_need_director"></div>
+    <div class="link" from="inform1" to="end"></div>
+</div>

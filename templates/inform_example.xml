@@ -1,0 +1,21 @@
+<div class="template" id="inform example">
+  <div class="node START" id="start">
+    <p>START</p>
+  </div>
+  <div class="node ACTION" id="action1" style="z-index: 0; left: 280px; top: 200px;">
+    <p>Action1</p>
+  </div>
+  <div class="node ACTION" id="action2" style="z-index: 0; left: 580px; top: 180px;">
+    <p>Action2-1</p>
+  </div>
+  <div class="node INFORM" id="inform1">
+    <p>Inform 1</p>
+  </div>
+  <div class="node END" id="end">
+    <p>END</p>
+  </div>
+  <div class="link" from="start" to="action1"></div>
+  <div class="link" from="inform1" to="action2"></div>
+  <div class="link" from="action2" to="end"></div>
+  <div class="link" from="action1" to="inform1"></div>
+</div>

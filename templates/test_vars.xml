@@ -1,0 +1,35 @@
+<div class="template" id="multi_vars">
+    <div class="node START" id="start">
+        <p>START</p>
+    </div>
+    <div class="node ACTION" id="apply" style="z-index: 0; left: 100px; top: 360px;">
+        <p>Apply leave with multi kvars</p>
+        <div class="kvars">
+
+ICAgICAgICAgICAgewogICAgICAgICAgICAiZGF5cyI6eyAidmFsdWUiOiAzLCJsYWJlbCI6ICJob3cgbWFueSBkYXlzIHRvIGxlYXZlPyJ9LAogICAgICAgICAgICAicmVhc29uIjp7ICJ2YWx1ZSI6ICJzZWUgcGFyZW50IiwgImxhYmVsIjoid2hhdCByZWFzb24gZm9yIHRoaXMgbGVhdmU/In0sCiAgICAgICAgICAgICJyZWFzb24yIjogInNlZSBwYXJlbnQyIiwKICAgICAgICAgICAgImRheTMiOiB7InZhbHVlIjogMzJ9LAogICAgICAgICAgICAicmVhc29uMyI6ICJzZWUgcGFyZW50MyIsCiAgICAgICAgICAgICJyZWFzb240IjogeyJ2YWx1ZSI6ICJzZWUgcGFyZW50NCJ9CiAgICAgICAgICAgIH0K
+
+        </div>
+    </div>
+    <div class="node ACTION" id="approve_by_leader" style="z-index: 0; left: 280px; top: 360px;">
+        <p>Approve leave Team Leader</p>
+    </div>
+    <div class="node ACTION" id="approve_by_director" style="z-index: 0; left: 720px; top: 720px;">
+        <p>Approve leave by Director2</p>
+    </div>
+    <div class="node INFORM" id="inform1" style="z-index: 0; left: 860px; top: 440px;"></div>
+    <div class="node SCRIPT" id="switch1" style="z-index: 0; left: 340px; top: 600px;">
+        <code>cmV0dXJuIChrdmFycy5kYXlzLnZhbHVlPDUpPydub19uZWVkX2RpcmVjdG9yJzonbmVlZF9kaXJlY3Rvcic7</code>
+    </div>
+    <div class="node END" id="end" style="z-index: 0; left: 1040px; top: 440px;">
+        <p>END</p>
+    </div>
+    <div class="link" from="start" to="apply"></div>
+    <div class="link" from="apply" to="approve_by_leader"></div>
+    <div class="link" from="approve_by_leader" to="inform1" case="reject"></div>
+    <div class="link" from="approve_by_leader" to="switch1" case="approve"></div>
+    <div class="link" from="approve_by_director" to="inform1" case="Reject"></div>
+    <div class="link" from="approve_by_director" to="inform1" case="Approved"></div>
+    <div class="link" from="switch1" to="approve_by_director" case="need_director"></div>
+    <div class="link" from="switch1" to="inform1" case="no_need_director"></div>
+    <div class="link" from="inform1" to="end"></div>
+</div>
