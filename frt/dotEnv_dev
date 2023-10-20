@@ -1,0 +1,5 @@
+VITE_ORIGIN="https://lkh.ai.localhost"
+VITE_API_SERVER="https://aid.localhost"
+VITE_MTC_SERVER="https://lkh.ai.localhost"
+VITE_DEPLOY_MODE="private"
+VITE_UPLOAD_MAX_FILE_SIZE="30MB"

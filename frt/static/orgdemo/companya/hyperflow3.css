@@ -1,0 +1,60 @@
+.org-logo {
+	height: 32px;
+	background-image: url(/orgdemo/companya/logo.jpg);
+	background-size: 32px 32px;
+	background-repeat: no-repeat;
+	justify-content: flex-end;
+	border-radius: 5px;
+}
+.tnt-navmenu {
+	background-image: url(/orgdemo/companya/background3.jpg);
+	background-repeat: no-repeat;
+}
+.menuitem {
+	color: #ffffff;
+}
+body {
+	background-image: url(/orgdemo/companya/background4.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.tnt-footer {
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+.tnt-workflow-id,
+.tnt-template-id,
+.tnt-team-id {
+	color: #6667ab;
+}
+.tnt-odd {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+.tnt-footer-link {
+	color: rgba(0, 0, 0, 0.8);
+}
+.tnt-footer {
+	margin-top: 100px;
+	background-color: rgba(255, 255, 255, 0.8);
+	min-height: 400px;
+}
+.tnt-navmenu .nav-item {
+	text-align: center;
+}
+
+.tnt-navmenu .nav-link {
+	color: #29282d;
+}
+.tnt-navmenu .nav-link:hover {
+	color: #29282d;
+}
+.tnt-navmenu .nav-link.active {
+	font-weight: bold;
+	text-decoration: none;
+	text-decoration-thickness: 1px;
+	border-bottom: 1px solid #d8d4d0;
+}
+.tnt-navmenu .tnt-header-username {
+	color: #29282d;
+	padding-left: 20px;
+}

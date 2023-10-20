@@ -1,0 +1,1564 @@
+{
+	"navmenu": {
+		"home": "Home",
+		"doc": "Doc",
+		"discuss": "Discuss",
+		"template": "Template",
+		"planning": "Planning",
+		"workflow": "Monitoring",
+		"workflow_normal": "List",
+		"workflow_mining": "Mining",
+		"worklist": "My Works",
+		"kshares": "App Store",
+		"settings": "Settings",
+		"teaming": "Teaming",
+		"messages": "Messages",
+		"currentApp": "Application",
+		"switch_tenant": "Switch Tenant",
+		"history": "History",
+		"recentbiz": "Recent Biz",
+		"flexible": "Flexible Task"
+	},
+	"discuss": {
+		"category": {
+			"ALL_VISIED": "All Visable",
+			"I_STARTED": "My Workflow",
+			"I_AM_IN": "My Works",
+			"I_AM_QED": "Related to Me"
+		},
+		"reload": "Reload"
+	},
+	"home": {
+		"topic": "Svelte Localization Tutorial",
+		"subtopic": "Internationalization and Localization",
+		"ifyouhaveaccount": "or if you already have an account",
+		"slogan": "Run Hyper-Automation applications with Metatocome",
+		"introduction": "Metatocome is a Hyper-Automation engine online service which can be used to automate everything in an organization that can be automated. Developers can build advanced wokflow based applications that dispatch tasks to both human and computer systems with any modern computer languages.",
+		"features": {
+			"engine": "Metatocome's core component is an advanced hyper-automation Engine running in the cloud. Developers can design, run, monitor workflow processes on this site, or develop fully customized UIs with the support of Metatocome APIs.",
+			"hyper": "Metatocome can automate the process of any sort of entities, no matter they are human or computer system, from a integrated enterprise perspective. these entities take the role of \"workers\", Staff get their work instructions from worklist, system provide API endpoints Metatocome engine will call.",
+			"easy": "Integrate workflow into your application, web-based, iOS or Android APP, with SDK of any modern computer language.",
+			"secure": "Metatocome take the role of a pure collaboration engine running separatedly from other systems, and has separated authentication, and access control from enterprise's internal IT system. Metatocome use resource URI to refer to any internal or external IT resources."
+		},
+		"getstart": {
+			"title": "Get Started",
+			"content": "Whether you're new to BPM or an experienced user, it's easy to learn and use Yarknode",
+			"link": "Start with our Beginner's Guide"
+		},
+		"hub": {
+			"title": "Process Hub",
+			"content": "There are a lot of shared processes in processhub, categoried by industry and business scenario, pick one, make it yours, and start work with it.",
+			"link": "Startwith our Beginner's Guide"
+		},
+		"doc": {
+			"title": "Docs",
+			"content": "Documentation for Yarknode's Administrators, Developers, and End Users",
+			"link": "docs.yarknode.com"
+		},
+		"c4f": {
+			"title": "Free BMP consultant",
+			"content": "We provide free consulting service for your business process management, tell us your business requirements, our experienced consultant will create process for you, completely free.",
+			"link": "Submit your ticket now"
+		},
+		"faq": {
+			"title": "Frequntly Asked Questions"
+		},
+		"search": {
+			"placeholder": "Search ProcessHub"
+		}
+	},
+	"account": {
+		"signin": "Sign In",
+		"signup": "Sign Up",
+		"signout": "Sign Out",
+		"logout": "Log out",
+		"register": "Register",
+		"nofreereg": "self-registration is not allowed, contact your admin",
+		"needAnAccount": "Need an account?",
+		"yourEmail": "Your email",
+		"yourAccount": "Your account",
+		"password": "Password",
+		"haveAnAccount": "Have an account?",
+		"yourDisplayName": "Your display name",
+		"choosePassword": "Choose your password",
+		"verifyPassword": "Verify your password",
+		"resetpassword": "Reset your password",
+		"verificationcode": "Input Verification Code You Received",
+		"sendvrfcode": "Send Verification Code",
+		"resendvrfcode": "Resend Verification Code",
+		"vrfcodesent": "Verification Code Sent, Check your email pls",
+		"changepassword": "Submit New Password",
+		"passwordchanged": "Password reset done, goto Login",
+		"resetPassword": {
+			"vrfcode_not_found": "Verification Code not correct or expired",
+			"user_not_found": "User not found"
+		},
+		"usernotfound": "User not found",
+		"sendvrfcodeerror": "Email is invalid",
+		"yourFullEmail": "Your full email address",
+		"yourEmailOrId": "Full email address or prefix ID",
+		"binding": "Binding",
+		"occupied": "{account} is occupied"
+	},
+	"register": {
+		"dberror": "Registration failed",
+		"duplicate": "Account already registered",
+		"dismiss": "Acknowledged",
+		"emailverifytips": "After registration, you need to verify your email address by clicking the link in the email platform send to you",
+		"upgradeorgtips": "If you are enterprise account administrator, and are going to upgrade your account to enterprise-level, please contact Metatocome client representives. After upgrading succesfully, your workmates will be able to collaborate with MTC, and your account will be the Administrator automatically.",
+		"success": "Registration successfully",
+		"loginnow": "Go to login now"
+	},
+	"extrafilter": {
+		"template": "Template",
+		"allTemplate": "--All Templates--",
+		"me": "Me",
+		"any": "Any",
+		"mine": "Mine",
+		"starter": "Starter",
+		"owner": "Owner",
+		"in": "In"
+	},
+	"remotetable": {
+		"executeNow": "Search Now",
+		"rowperpage": "Rows per page",
+		"colperrow": "Cols per row",
+		"rows-10": "10 items per page",
+		"rows-20": "20 items per page",
+		"rows-50": "50 items per page",
+		"rows-100": "100 items per page",
+		"cols-1": "one item per row",
+		"cols-2": "two items per row",
+		"cols-3": "three items per row",
+		"cols-4": "four items per row",
+		"totalRows": "Total",
+		"pageSize": "Page Size",
+		"pageCount": "Page Count",
+		"sortBy": "Sorting",
+		"filter": "Filter",
+		"bywhat": "by name or title",
+		"byauthor": "by author",
+		"in": "In",
+		"start_end": "Specify Period",
+		"calendarBegin": "Begin",
+		"calendarEnd": "End",
+		"title": "Title",
+		"name": "Name",
+		"status": "Status",
+		"starter": "Starter",
+		"updatedAt": "Updated at",
+		"startedAt": "Started at",
+		"lastingDays": "Lasting Days",
+		"createdAt": "Assign at",
+		"lasting": "Days",
+		"actions": "Actions",
+		"moreActions": "More Actions",
+		"author": "Author",
+		"belongTo": "Belonging to",
+		"multi-select": "Multi-select",
+		"multi-select-cancel": "Cancel",
+		"multi-select-all": "Select all",
+		"multi-select-none": "Select none",
+		"multi-select-delete": "Delete Selected",
+		"visifor": "Only visible for: ",
+		"tags": "Tags: ",
+		"desc": "Description: ",
+		"template": {
+			"set": {
+				"title": "Template Settings",
+				"settags": "Set tags (delimited by spaces)",
+				"setauthor": "Set author to（user id/email prefix）",
+				"setdesc": "Set description",
+				"setvisito": "Set visible for (specify with PDS format)",
+				"selecttocopyfrom": "Select to copy from",
+				"tplid": "Rename Template ID",
+				"autostop": "Cancel process when last task stale more than minutes"
+			},
+			"allowdiscuss": {
+				"true": "Allow Discussion",
+				"false": "No Discussion"
+			},
+			"musthavepbo": {
+				"true": "Must have PBO when start",
+				"false": "Could have no PBO when start"
+			}
+		},
+		"me": "Me",
+		"any": "Any",
+		"startIt": "Start it",
+		"startApp": "Start App",
+		"wfa": {
+			"runningWorks": "Running Works",
+			"allWorks": "All Works",
+			"pause": "Pause",
+			"resume": "Resume",
+			"stop": "Stop",
+			"restart": "Restart",
+			"startAnother": "Start Another",
+			"viewTemplate": "View Template",
+			"viewInstanceTemplate": "View Instance Template",
+			"viewRelatedDiscussion": "Dicussion",
+			"deleteThisWorkflow": "Delete This Workflow",
+			"setpboat": "Set PBO checkpoint",
+			"setTitle": "Set Title",
+			"renameto": "Rename to",
+			"setting": "Settings",
+			"restartthendeleteThisWorkflow": "Restart And Delete This"
+		},
+		"tplaction": {
+			"startIt": "Start It",
+			"seeWorkflows": "See Workflows",
+			"seeWorklist": "See Worklist",
+			"addDesc": "Add Description",
+			"set": "Setting",
+			"setTags": "Set TAGS",
+			"setVisi": "Set Visibility",
+			"setOwner": "Set Owner",
+			"deleteThisTempalte": "Delete This Template",
+			"lastUpdate": "Last Update",
+			"exportdata": "Export Data",
+			"editors": "Editors",
+			"analysis": "Process mining",
+			"scheduler": "Scheduler"
+		},
+		"postpone": {
+			"in": "Postponed，expire in ",
+			"text": "Postpone",
+			"single": "{days} Day",
+			"plural": "{days} Days"
+		}
+	},
+	"title": {
+		"template": "Template",
+		"workflow": "Workflow",
+		"worklist": "Work list",
+		"mining": "Process Mining",
+		"share": "Share Business Design"
+	},
+	"adhoc": {
+		"header": "Send out an Adhoc Task",
+		"title": "Task title",
+		"pds": "Who should take it? (use PDS format)",
+		"recent": "Recent doers",
+		"comment": "Extra instructions",
+		"foundduser": "Found {num} users"
+	},
+	"button": {
+		"postKShare": "Post to ProcessHub",
+		"check": "Check",
+		"addcron": "Add this Crontab automatically-start-workflow-plan",
+		"toggleAdvancedSearch": "Advanced Search",
+		"footprint": "Footprint",
+		"resetQuery": "Reset/All",
+		"refreshtodos": "Refresh Worklist",
+		"create": "Create",
+		"import": "Import",
+		"search": "Search",
+		"recent": "Recent",
+		"settings": "Settings",
+		"me": "Me",
+		"discuss": "Discuss",
+		"tenant": "Tenant",
+		"okay": "Okay",
+		"cancel": "Cancel",
+		"clear": "Clear",
+		"set": "Set",
+		"close": "Close",
+		"closeeditlog": "Close Edit Log",
+		"closecronsetting": "Close Crontab Setting",
+		"closetemplatesetting": "Close Template Setting",
+		"done": "Done",
+		"adhoc": "New Adhoc",
+		"sendback": "Push back",
+		"revoke": "Revoke",
+		"checkdoer": "Check PDS as your expectation",
+		"resolve": "Resolve",
+		"sendadhoc": "Send it out",
+		"sendadhocConfirm": "Yes, send task to above people",
+		"sendadhocReconsider": "No, let me re-considerate",
+		"export": "Export",
+		"copy": "Copy",
+		"rename": "Rename",
+		"delete": "Delte",
+		"startnow": "Start Now",
+		"current_is_searching": "to Mining mode",
+		"current_is_mining": "to Search mode",
+		"add": "Add",
+		"upgrade": "upgrade Tenant",
+		"reset": "Reset",
+		"update": "Update",
+		"changeName": "Change name",
+		"addAKey": "Add a key",
+		"more": "More",
+		"less": "Less",
+		"save": "Save",
+		"goback": "Back",
+		"gotobiz": "BizPanel",
+		"next": "next",
+		"close": "Close",
+		"yana.prompt.guide": "Let Yana introduce Yarknode to you",
+		"yana.start": "Okay",
+		"preview": "Preview",
+		"view": "View it",
+		"openinnewtab": "Open in new tab",
+		"download": "Download",
+		"my_work": "My Work",
+		"moreitems": "More",
+		"lessitems": "Less",
+		"loadmore": "load more",
+		"create_new_template": "Create new workflow template"
+	},
+	"template": {
+		"create": {
+			"name": "Template name",
+			"tags": "Tags delimited by spaces/;/,"
+		},
+		"editlog": {
+			"title": "Editting log"
+		},
+		"addcron": {
+			"title": "Automatically start workflow",
+			"cronStarters": "Set Starter to",
+			"cronStarters_placeholder": "One or more people specified in PDS format",
+			"existing": "Existing Crontab plan",
+			"addnew": "Add new Crontab plan"
+		},
+		"import": {
+			"name": "Template name",
+			"tags": "Tags delimited by spaces/;/,",
+			"from_local_disk": "Import from local file",
+			"from_process_hub": "Import domain exports shared best practices from Process Hub"
+		},
+		"recent": "Recent: ",
+		"empty": "No template found"
+	},
+	"attach": {
+		"input_a_url": "Input a URL",
+		"btn_add_a_url": "Add",
+		"security_warning": "The files uploaded here are visible to all participants. It's strongly recommanded to upload files to strictly access controled file server or net-disk, then only add the urls of them here. "
+	},
+	"work": {
+		"moreActions": "More actions: ",
+		"pbostatus": "Status",
+		"empty": "Your todo list is empty at this moment",
+		"freejumping": "Jumping",
+		"quickcomments": "Quick comments",
+		"notfound": "Work not found",
+		"more": {
+			"alltodos": "More todos",
+			"thisbiz": "Explore This Biz",
+			"thisprocess": "Explore This Process"
+		}
+	},
+	"workflow": {
+		"toggleStatus": "Toggle status: ",
+		"empty": "No process found",
+		"restart": "Restart",
+		"reboot": "Reboot",
+		"restart.success": "Restart success",
+		"reboot.success": "Reboot success.",
+		"startat": "Begin at",
+		"pbostatus": "PBO status",
+		"doneat": "End at"
+	},
+	"status": {
+		"All": "All",
+		"ST_RUN": "Running",
+		"ST_PAUSE": "Paused",
+		"ST_DONE": "Finished",
+		"ST_STOP": "Stopped",
+		"ST_REVOKED": "Revoked",
+		"ST_RETURNED": "Returned",
+		"ST_IGNORE": "Ignored",
+		"ST_FOOTPRINT": "Footprint"
+	},
+	"statusof": {
+		"All": "All",
+		"ST_RUN": "Running",
+		"ST_PAUSE": "Paused",
+		"ST_DONE": "Finished",
+		"ST_STOP": "Stopped",
+		"ST_REVOKED": "Revoked",
+		"ST_RETURNED": "Returned",
+		"ST_IGNORE": "Ignored",
+		"ST_FOOTPRINT": "Footprint"
+	},
+	"start": {
+		"withtemplate": "Use template",
+		"canbefile": "You may upload a file as PBO",
+		"startWorkflow": "Start Workflow",
+		"startIt": "Start It",
+		"rehearsal": "Rehearsal",
+		"context": "Optional Workflow Context",
+		"context_desc": "Some urls",
+		"pbo": "Primary Business Object URL",
+		"title": "Workflow title",
+		"title_placeholder": "title",
+		"teamid": "Start with team",
+		"recentTeam": "Recent used team",
+		"checkitout": "Check it out",
+		"monitorit": "Goto Monitor",
+		"firststep": "Goto the first task",
+		"startanother": "Start another",
+		"OR": "Or",
+		"ifnotfamiliar": "A workflow may involve a lot of people, you'd better rehearsal it if are not familiar with this workflow",
+		"iffamiliar": "Or you may start it formally",
+		"useflexibleteam": "Specify flexible team if necessary",
+		"needtitle": "Please provide title",
+		"pleaseConfirm": "Please confirm",
+		"warnNoPbo": "PBO not set",
+		"warnNoTitle": "Title not specified",
+		"startAnyway": "Start Anyway"
+	},
+	"todo": {
+		"completed": "Completed",
+		"status": "Task Status",
+		"Starter": "Starter UID",
+		"StarterOU": "Starter Department",
+		"StarterCN": "Starter Name",
+		"OUof": "OU",
+		"owner": "Task Owner",
+		"doneat": "Completed",
+		"decision": "Decision",
+		"pbo": "Primary Business Object",
+		"instruction": "Instruction",
+		"nodeInput": "Task Variables",
+		"transferable": "This task is transferable",
+		"notTransferable": "This task is not transferable",
+		"transferto": "Transfer to",
+		"transfer": "Transfer",
+		"rehearsalInformation": "Rehearsal Information",
+		"process": "Process",
+		"processRehearsal": "Process Rehearsal",
+		"worklog": "Work log",
+		"worklogof": "Work log of",
+		"monitor": "Monitor",
+		"print": "Print",
+		"showlog": "Show log",
+		"startat": "Start at",
+		"startby": "Start by",
+		"nodevars": "Data",
+		"comments": "Comments",
+		"freejumpto": "Jump to",
+		"restartrehearsal": "Restart Rehearsal",
+		"cancelworkflowatfirststep": "Abandon Process",
+		"workflowcontext": "Workflow Context",
+		"rehearsalinformation": "Rehearsal Information",
+		"track": {
+			"dakai": "Expand",
+			"shouqi": "Collapse"
+		},
+		"bethefirstcomment": "Be the first to discuss",
+		"congrat": "Congratulations! You have completed all tasks."
+	},
+	"tpl": {
+		"create_new": "Create a new template",
+		"dropdown": "File",
+		"kshare": "Share PH",
+		"view": "View",
+		"prop": "Prop",
+		"new": "New",
+		"export": "Export",
+		"copyto": "Copy to",
+		"copy_duplicated": "{tplid} Already exists",
+		"copy_successed": "Successfully copy to {tplid}",
+		"rename": "Rename",
+		"delete": "Delete",
+		"editit": "Edit it",
+		"viewit": "View it",
+		"startit": "Start it",
+		"form": {
+			"newtplname": "New template name",
+			"exportto": "Export curent template to",
+			"copyto": "Copy to",
+			"renameto": "Rename to",
+			"delete": "Delete",
+			"start": "Start"
+		}
+	},
+	"prop": {
+		"label": "Activity Description",
+		"bot": "Webhook",
+		"bot_wecom": "WeCom",
+		"action": {
+			"tab": {
+				"participant": "Participant",
+				"instruction": "Instruction",
+				"features": "Features",
+				"variables": "Variables",
+				"code": "Script code",
+				"route": "Routing",
+				"crontab": "Repeat",
+				"others": "Others",
+				"previewon": "Preview (Variables will not be inteperated in preview)",
+				"previewoff": "Close preview",
+				"whattags": "What HTML tags could I have?"
+			},
+			"placeholder": {
+				"instruct": "may use simple HTML format and Handlebars to include Kvars",
+				"code": "Keep it blank unless MUST-to-have"
+			},
+			"p10t": {
+				"with_features": "Include following features on this node:",
+				"byall": "Vote if multiple participants",
+				"transferable": "Transferable",
+				"withsb": "with Sendback",
+				"withrvk": "with Revoke",
+				"withadhoc": "with Adhoc",
+				"withcmt": "with Comment",
+				"sr": "Keep single running task if looped",
+				"pds": "Participants",
+				"define_pds": "Task's owner",
+				"define_cc": "CC to",
+				"pick": "Pick PDS",
+				"try": "Try a PDS",
+				"tryteam": "with Team",
+				"tryuser": "with User",
+				"tryresult": "Result",
+				"csv": "From CSV File",
+				"csv_placeholder": "CSV file input variable name",
+				"allowpbo": "Allow to edit PBO",
+				"mustsign": "Need signature",
+				"trykvar": "Try with Vars",
+				"trywfid": "Try with wfid",
+				"csvfile_varname": "varialbe name for csv file",
+				"useuserincsv": "Use participants defined in CSV"
+			},
+			"route": {
+				"from": "Prev",
+				"to": "Followings",
+				"pickone": "Pick one",
+				"option": "Routing",
+				"freejump": "Can jump freely from here",
+				"freejumpable": "Matched {tot} nodes"
+			},
+			"kvar": {
+				"basic": "Basic",
+				"extra": "Extra",
+				"name": "Name",
+				"tbl_options": "Headers",
+				"ou_options": "OU Code",
+				"sel_options": "Options",
+				"tbl_placeholder": "Colname1;Colname2;Colname3",
+				"ou_placeholder": "ou_code;yes/no(include top level)",
+				"sel_placeholder": "Option1;Option2;Option3",
+				"value": "Value",
+				"label": "Label",
+				"when": "When",
+				"placeholder": "Placeholder",
+				"visi": "Visible",
+				"breakrow": "Break row",
+				"ID": "ID",
+				"number": {
+					"min": "Min",
+					"max": "Max",
+					"step": "Step"
+				},
+				"required": "Required"
+			},
+			"button": {
+				"addnewvar": "+ Add new variable",
+				"tryit": "Try it"
+			},
+			"cronrun": {
+				"note": "Used to dispatch task on specific time with Crontab standard expression. Make sure you are familiar with Crontab, unexpected behaviour may occur otherwise",
+				"repeaton1": "If user choice is not",
+				"repeaton2": "then stop crontab dispatching",
+				"repeaton3": "then stop repeating",
+				"norepeat": "Don't disptach repeatedly",
+				"nocron": "Don't disptach repeatedly",
+				"byrepeaton": "According to user choice",
+				"runthencron": "Dispatch task first, then dispatch automatically following Crontab",
+				"onlycron": "Only dispatch task automatically following Crontab"
+			}
+		},
+		"script": {
+			"syncmode": "Sync Mode",
+			"asyncmode": "Async Mode",
+			"tryrun": "Try Run"
+		},
+		"timer": {
+			"code": "Code",
+			"type": "Type",
+			"fromstart": "From Start",
+			"fromnow": "From Now",
+			"fix": "Fix"
+		},
+		"inform": {
+			"recipient": "Recipient",
+			"content": "Content",
+			"subject": "Subject"
+		},
+		"sub": {
+			"SUB": "Sub TPLID",
+			"standalone": "Standalone"
+		},
+		"connect": {
+			"decision": "Decision",
+			"decision_placeholder": "Route depends on user decision",
+			"pbostatus": "Set PBO Status to",
+			"setValue": "Set Process Value",
+			"varname": "Var Name",
+			"varvalue": "Var Value"
+		},
+		"tpl": {
+			"title": "Template Properties",
+			"tplid": "Template Name",
+			"readonly": "Read only",
+			"freejump": "Can jump freely on any node",
+			"callback": {
+				"endpoint": "Callback endpoint",
+				"both": "From Server and Client",
+				"onserver": "Server only",
+				"onclient": "Client only"
+			}
+		}
+	},
+	"designer": {
+		"AthenB": "A->B, Waiting for B",
+		"BthenA": "B->A, Waiting for A",
+		"confirm": {
+			"reload": {
+				"title": "Reload",
+				"body": "Template was modified by else other, or in other window, need reloading",
+				"button": {
+					"yes": "Reload"
+				}
+			}
+		},
+		"showid": "nodeID",
+		"curve": "Curve",
+		"tool": {
+			"POINTER": "<kbd><i class='bi bi-mouse2'>click</i></kbd> select, <kbd>click and hold</kbd> move, <kbd>shift-click</kbd>properties, <kbd>shift-move</kbd>multi-select, <kbd>num</kbd>tool, <kbd>Ctrl-E</kbd>mode",
+			"ACTION": "<kbd><i class='bi bi-mouse2'>click</i></kbd>anywhere to place a task node, <kbd>Esc</kbd> to quite this mode",
+			"INFORM": "<kbd><i class='bi bi-mouse2'>click</i></kbd> place an INFORM node for sending email(s) notifications",
+			"SCRIPT": "<kbd><i class='bi bi-mouse2'>click</i></kbd> place an SCRIPT node for embedding Javascript program in workflow",
+			"TIMER": "<kbd><i class='bi bi-mouse2'>click</i></kbd> place a TIMER node for controlling time",
+			"SUB": "<kbd><i class='bi bi-mouse2'>click</i></kbd> place a SUB node for running sub-process or another standalone process",
+			"AND": "<kbd><i class='bi bi-mouse2'>click</i></kbd> place an AND node for continueing only when previous tasks are all done",
+			"OR": "<kbd><i class='bi bi-mouse2'>click</i></kbd> place an OR node for continuing after any previous task is done",
+			"GROUND": "<kbd><i class='bi bi-mouse2'>click</i></kbd> place an GROUND node for end here without following",
+			"CONNECT": "<kbd><i class='bi bi-mouse2'>click</i></kbd>Click two nodes to connect them, hold <kbd>SHIFT</kbd> for contineous linking, <kbd>Esc</kbd> or <kbd>double-click</kbd> on blank area to cancel",
+			"THROUGH": "<kbd><i class='bi bi-mouse2'>click</i></kbd> place an THROUGH node, for cotinueing a long route, no effect to process flow logic"
+		}
+	},
+	"filepond": {
+		"labelIdle": {
+			"pbo": "Drop file or Browse",
+			"kvar": "Drop file or Browse"
+		},
+		"anytype": "Any type",
+		"multiple": "allow multiple, max: {maxFiles}个",
+		"single": "single file",
+		"info": "For {key}, {allowMultiple}, file type: {accept}, max file size:{maxFileSize} ...",
+		"labelFileProcessingComplete": "Upload successfully",
+		"labelTapToUndo": "Click x to undo",
+		"labelTapToRetry": "Retry",
+		"labelTapToCancel": "Cancel"
+	},
+	"confirm": {
+		"title": {
+			"areyousure": "Are you sure?",
+			"needReload": "Version updated",
+			"postpone": "Postpone"
+		},
+		"body": {
+			"postpone": "Postpone for {days} days(s)",
+			"cancelpostpone": "Cancel postpone",
+			"needReload": "Application should be refreshed",
+			"deletefile": "File will be delete permanately, plase confirm",
+			"restartthendestroy": "Destroy this rehearsal and start a new one",
+			"cancelworkflowatfirststep": "You have opportunity to cancel this process at its first step. Canceling a running process often makes other people who are involved in the process confused even annonyed, please confirm you are ok with it",
+			"deleteWorkflow": "Canceling a running process often makes other people who are involved in the process confused even annonyed, please confirm you are ok with it"
+		},
+		"button": {
+			"yes": "Yes",
+			"no": "No",
+			"confirm": "Confirm",
+			"cancel": "Cancel",
+			"delete": "Delete"
+		},
+		"locale": {
+			"usedefault": {
+				"title": "Browser language detected",
+				"body": "For first time user, MTC use your browser default language {browserlang}, you may change to other language language in MTC setting",
+				"confirm": "Got it"
+			},
+			"langchanged": {
+				"title": "Browser language changed",
+				"body": "Browser language changed to '{browserlang}', change MTC language to it respectively?",
+				"button1": "Yes",
+				"button2": "Stick on current {currentlang}"
+			}
+		},
+		"delete": {
+			"template": {
+				"title": "Delete Template",
+				"body": "Deletion is not revocable",
+				"yes": "Confirm to delete"
+			},
+			"template-multi": {
+				"title": "Delete {count} templates",
+				"body": "Delete {count} templates，can not undo",
+				"yes": "Confirm to delete"
+			},
+			"workflow-multi": {
+				"title": "Delete {count} workflows",
+				"body": "Delete {count} workflows, can not undo",
+				"yes": "Confirm to delete"
+			}
+		}
+	},
+	"inputtable": {
+		"copyto": {
+			"above": "Copy to Above",
+			"below": "Copy to Below"
+		},
+		"delete": "Delte this row",
+		"move": {
+			"up": "Move up",
+			"down": "Move down",
+			"top": "Move to top",
+			"bottom": "Move to bottom"
+		}
+	},
+	"vote": {
+		"last": "The last one",
+		"most": "The most",
+		"least": "The least",
+		"allOrFailto": "All the same or fail to",
+		"percentOrFailto": "More than %, or fail to",
+		"ifAny": "If any match",
+		"ifAnyThenMost": "If any, or else the most",
+		"ifAnyThenLeast": "If any, or else the least",
+		"ifAnyThenAllThenMost": "If any, then all the same , then the most",
+		"ifAnyThenFailto": "If any, or fail to"
+	},
+	"tools": {
+		"POINTER": "Select",
+		"ACTION": "Activity",
+		"INFORM": "Notify",
+		"SCRIPT": "Script",
+		"TIMER": "Timer",
+		"SUB": "Sub process",
+		"AND": "And",
+		"OR": "OR",
+		"GROUND": "Ground",
+		"CONNECT": "Connect",
+		"THROUGH": "Through"
+	},
+	"setting": {
+		"set": "Set",
+		"adminpwd": "Admin Password",
+		"adminpwd_ph": "Admin password is required for security consideration",
+		"tab": {
+			"personal": "Personal",
+			"wecombot": "Wecom TODO Bot",
+			"delegation": "Delegation",
+			"tenant": "Tenant",
+			"orgset": "Org",
+			"orgchart": "Orgchart",
+			"members": "Members",
+			"smtp": "SMTP",
+			"data": "Data",
+			"maintainance": "Maintainance",
+			"resign": "Resign",
+			"myfiles": "My files",
+			"menu": "Menu config",
+			"list": "Datalist config"
+		},
+		"personal": {
+			"nav": "Personal",
+			"title": "Your Personal Configuration",
+			"body": "Avatar, Signature, Password etc.",
+			"action": "Configure",
+			"avatar": "Your Avatar",
+			"chooseavatar": "Choose Avatar Image",
+			"choosesignature": "Choose Signature Image",
+			"signature": "Signature",
+			"cn": "Account Display Name",
+			"nickname": "Employee Name",
+			"currentTenant": "Current Org is: {tenant}",
+			"currentMenuGroup": "Current menu group is: {mg}",
+			"currentpassword": "Current password",
+			"newpassword": "New password",
+			"sendmail": "Tell me on new work comming",
+			"joincode": "Join Org with joincode",
+			"passwordhint": "1. length between 6 and 20; 2. Must has letter, number and spechars;  3. Spechars are !@#$%^&*",
+			"passwordtooshort": "Too short",
+			"passwordtoolong": "Too long",
+			"old_password_wrong": "Old password is wrong",
+			"newpassword_wrong": "New password is invalid",
+			"password2notsame": "Passwords not the same",
+			"accountFormatError": "The account format is invalid",
+			"usernameFormatError": "The username format is invalid",
+			"nicknameFormatError": "The nickname format is invalid",
+			"accountFormatTip": "4-20 characters long, must beginning with a letter, may have letter/number/underscore in the middle, and must end with letter/number",
+			"usernameFormatTip": "2-20 characters long, must beginning with a letter, may have letter/number/underscore/space/dot in the middle, and must end with letter/number",
+			"nicknameFormatTip": "2-20 characters long, must beginning with a letter, may have letter/number/underscore/space/dot in the middle, and must end with letter/number",
+			"email": "Email",
+			"sms": "SMS",
+			"wecom": "WeCom",
+			"upload": "Upload"
+		},
+		"delegation": {
+			"delegated_by": "Delegated from {delegator}",
+			"nav": "Delegation",
+			"title": "Delegate to/from others",
+			"body": "Delegate work to/from others within a period",
+			"action": "Configure",
+			"delegation": "Delegation",
+			"delegateto": "Delegate My Task to",
+			"delegatee_eid": "Delegatee's EID",
+			"BeginDate": "Begin Date",
+			"EndDate": "End Date",
+			"BeforeDate": "Before Date",
+			"towhom": "To whom",
+			"Delegate": "Delegate now",
+			"and": "and",
+			"tome": "Delegations to me",
+			"fromme": "My Delegate",
+			"Between": "Between",
+			"Delegator": "Delegator",
+			"Delegatee": "Delegatee",
+			"removeSelected": "Cancel selected"
+		},
+		"maintainance": {
+			"nav": "Maintainance",
+			"title": "Business Data Admin",
+			"body": "Delete process etc.",
+			"action": "Admin",
+			"select_status": "Filter by status",
+			"deletebizobj": "Delete business object",
+			"bywfid": "By Workflow ID",
+			"bywftitle": "By Workflow Title",
+			"bytplid": "By Template ID"
+		},
+		"list": {
+			"nav": "List",
+			"title": "Manage Data List",
+			"body": "Define Named Data List",
+			"action": "Manage",
+			"new": {
+				"label": "Create New List",
+				"name": "Name",
+				"items": "Default items"
+			},
+			"author": "Author: ",
+			"keyHead": "Key {name} ({index}/{total}): ",
+			"changeNameForm": {
+				"label": "Change Name Form",
+				"newName": "New name"
+			},
+			"error": {
+				"authorNotYou": "Sorry, not created by you"
+			},
+			"addKeyForm": {
+				"label": "Add Key Form",
+				"newKeyName": "New key name",
+				"listItems": "Data items"
+			}
+		},
+		"team": {
+			"nav": "Team",
+			"title": "Manage Flexible Team",
+			"body": "Team is used to map user to role",
+			"action": "Manage",
+			"list": "Exiting Teams",
+			"create": "Create Team",
+			"import": "Import Team",
+			"deletethisteam": "Delete",
+			"tabs": {
+				"team": {
+					"label": "Role-Employee",
+					"currentteamis": "Current Team：{teamid}",
+					"addNewRole": "Add a new role",
+					"Roles": "Roles in {teamid}",
+					"noRole": "No roles defined"
+				},
+				"export": {
+					"label": "Export",
+					"exportTo": "Export {teamid} to: "
+				},
+				"rename": {
+					"label": "Rename",
+					"renameTo": "Rename {teamid} to: "
+				},
+				"copyto": {
+					"label": "Copy",
+					"copyTo": "Copy {teamid} to: "
+				},
+				"delete": {
+					"label": "Delete",
+					"areYouSure": "Are your sure to delete {teamid}?"
+				}
+			}
+		},
+		"tenant": {
+			"nav": "Org Account",
+			"title": "Set your Org Account",
+			"messagefornoadmin": "Please contact administrator to change org level settings",
+			"body": "Config Org Account, manage org members",
+			"action": "Admin",
+			"adiministrator": "Administrator",
+			"myrole": "My Role",
+			"adminpwd": "Admin Password",
+			"adminpwd_ph": "Admin password is required",
+			"name": "Set Org name to",
+			"name_ph": "New name of this org",
+			"theme": "Use Theme URL",
+			"theme_ph": "Customized theme CSS URL",
+			"timezone": "Set timezone to",
+			"orgtags": "Org level tags",
+			"ocadmins": "Orgchart Administrators",
+			"ocadmins_ph": "Who can modify orgchart (single user id)",
+			"myorg": "My org name",
+			"myorgname": "The name",
+			"myorgtimezone": "Timezone",
+			"joincode": "Join Code",
+			"currentcode": "Current code",
+			"genjoincode": "Generated Join Code",
+			"selfjoincode": "Self-defined Join Code",
+			"invite": "Invite",
+			"invite_with_email": "Invite people with their emails",
+			"invite_with_qrcode": "Send QRCode to them",
+			"invite_ph": "Account list to invite, separated by space or comma or semicolon",
+			"joinapplication": "Join applications",
+			"refresh": "Refresh",
+			"noapplication": "There is no application at thistime",
+			"regfree": "Allow/Disallow",
+			"allow_regfree": "Allow empoloyees to self-register with company email",
+			"allowemptypbo": "Allow empty PBO on starting new process",
+			"allowemptypbo_true": "Set to: allow empty PBO",
+			"allowemptypbo_false": "Set to: must provide PBO",
+			"regfree_true": "Empoloyees are allowed to self-register with company email",
+			"regfree_false": "Self-registration is prohibited, however, administrators are able to add employee by importing org-chart",
+			"set_regfree_true": "On set, empoloyees will be allowed to self-register with company email",
+			"set_regfree_false": "On set, Self-registration will be prohibited, however, administrators are able to add employee by importing org-chart",
+			"apply_to_join": "Apply to join"
+		},
+		"menu": {
+			"nav": "User Menu",
+			"title": "User Menu Admin",
+			"messagefornoadmin": "You are not in Administrator group, ask one of them to change system menu",
+			"body": "Define menu for menu groups",
+			"action": "Menu admin",
+			"onlySelfIsUseful": "Only 'self' will be used, others will be saved however",
+			"pickone": "Select one",
+			"groupmenu": "Org-level menu groups",
+			"personalmenu": "Personal menus"
+		},
+		"orgchart": {
+			"nav": "OrgChart",
+			"title": "Manage your Org-Chart",
+			"body": "Add/Delete Department/employee etc.",
+			"action": "Manage",
+			"query": "Role Query",
+			"withextra": "with Extra Information",
+			"comment": "Relational query always start from the current user",
+			"adminpwd": "Admin password is required",
+			"ou_id": "OU_ID",
+			"emp_name": "Employee name",
+			"emp_email": "Employee email",
+			"emp_eid": "Employee account",
+			"account": "Mtc Account",
+			"emp_pwd": "New employee default password",
+			"ou_name": "OU Name",
+			"exprotcsv": "Export the whole OrgChart to CSV file",
+			"exportxlsx": "Export OrgChart to Excel XLSX file",
+			"importcsv": "Import from Orgchart CSV file",
+			"importxlsx": "Import from Excel XLSX file",
+			"btn": {
+				"refresh": "Refresh",
+				"emp_entry_create": "Add this employee as orgchart entry",
+				"emp_entry_update": "Update employee orgchart-entry",
+				"emp_entries_remove": "Remove all entries of this EID from orgchart",
+				"ou_create": "New or update department",
+				"ou_delete": "Delete department",
+				"export": "Export",
+				"import": "Import",
+				"copyto": "Copy to",
+				"moveto": "Move to",
+				"removeentry": "Remove entry from",
+				"removeallentries": "Remove all entries of EID"
+			},
+			"resolver_label": "Org Role Query",
+			"copyormovestaffto": "Copy or move {eid} from {from} to: ",
+			"confirmRemoveOu": {
+				"title": "Please confirm ",
+				"body": "All entries in this department will be removed",
+				"button": {
+					"yes": "Confirm"
+				}
+			},
+			"cleanEmployeesNotInOrgchart": "List employees who are not in Orgchart"
+		},
+		"members": {
+			"nav": "Members",
+			"title": "Administrate Members within Org Account",
+			"onlyyou": "This is a PRIVTATE orgnization, the only member is youself.",
+			"body": "Add/Delete, Set Group etc.",
+			"action": "Administation",
+			"members": "Members",
+			"email": "Email",
+			"account": "Account",
+			"name": "Name",
+			"group": "Auth Group",
+			"menugroup": "Menu Group",
+			"select": "Select",
+			"removeselected": "Remove selected {number} members",
+			"remove": "Remove selected {number} members from my org",
+			"setgroup": "Set group for selected {number} members",
+			"setpwd": "Set password for selected {number} members",
+			"setmenugroup": "Set menu group for selected {number} members"
+		},
+		"data": {
+			"list": "List Definitions",
+			"team": "Team Definitions"
+		},
+		"smtp": {
+			"nav": "SMTP",
+			"title": "Set SMTP Server",
+			"body": "Will be use to send emails",
+			"action": "Configure",
+			"onlyadmin": "Email setting is managed by org admin",
+			"server": "SMTP Server",
+			"port": "SMTP ServerPort",
+			"secure": "Secure Connection",
+			"user": "SMTP User Name",
+			"user_ph": "account name of SMPT user",
+			"pwd": "SMTP user password",
+			"pwd_ph": "Password of SMTP user",
+			"from": "Sent from",
+			"from_ph": "The sender's display name"
+		},
+		"wecombot": {
+			"nav": "Wecom Bot",
+			"title": "Configure WeCom Bot API",
+			"body": "To send messages to WeCom",
+			"action": "Configure",
+			"tplid": "Template ID",
+			"key": "Bot Key",
+			"addone": "Add one. now we have {number} ",
+			"keyformaterror": "Bot KEY format is illegal, please refer to WeCom bot manual"
+		},
+		"myfiles": {
+			"nav": "My Files",
+			"title": "Manage your upload files",
+			"body": "View, check usage, or delete unused",
+			"action": "Manage",
+			"view": "View",
+			"download": "Download",
+			"delete": "Delete",
+			"filter": "Only this Wf"
+		},
+		"resign": {
+			"nav": "User replacement",
+			"desc": "Replace task owner from one member to another, replace eid type PDS in template , for example: replace 'steven' to 'john', will cause all running tasks belong to Steven are re-distributed to John;  In 'Resign' mode, besides the operations above, Steven will also be marked as resigned from current orgnanization",
+			"replaceuser": "User replacement and Resign",
+			"selectall": "Select all",
+			"execute": "Resign",
+			"replace": "Replace Only",
+			"from": "Replace from",
+			"to": "Replace to",
+			"prepare": "Check related",
+			"result": {
+				"todo": "Owned Tasks",
+				"tpl": "Participated Templates"
+			},
+			"placeholder": {
+				"from": "ID or email of the leaver",
+				"to": "ID or email of the replacer"
+			},
+			"confirm": {
+				"title": "Caution",
+				"body": "Resign {from} account will be frozen, no operation will be allowed.",
+				"doit": "Confirm Resign"
+			}
+		},
+		"tenant_others": {
+			"nav": "Others"
+		}
+	},
+	"pds": {
+		"withextra": "With Extra",
+		"noextra": "Without Extra"
+	},
+	"authgroup": {
+		"ADMIN": "Administrator",
+		"OBSERVER": "Observer",
+		"DOER": "Doer"
+	},
+	"footer": {
+		"neural": "Neural system for your organiation",
+		"PLATFORM": "PLATFORM",
+		"SOLUTION": "Solution",
+		"video": "Explainer Video",
+		"howitworks": "How it works",
+		"usecases": "Use cases",
+		"signup": "Sign up",
+		"signin": "Sign in",
+		"DEVELOPER": "DEVELOPER",
+		"quickstart": "Quick Start",
+		"examples": "Examples",
+		"docsandhelp": "Docs & Help",
+		"discord": "Discord",
+		"sdks": "SDKs",
+		"opensource": "Open Source",
+		"DEPLOYMENT": "DEPLOYMENT",
+		"paas": "Paas Service",
+		"privateinstall": "Private Install",
+		"addpagetopersonalmenu": "Add to personal menu",
+		"yana": "Ask Yana"
+	},
+	"changeid": {
+		"current": "Current ID: ",
+		"changeto": "Change ID to",
+		"set": "Set",
+		"tooshort": "id is too short",
+		"exist": "already exists",
+		"meaningful": "You may need to give it a meaningful unique ID",
+		"idformat": "This is not a valid node id"
+	},
+	"csv": {
+		"uidnotfound": "Error: User IDs not found:"
+	},
+	"login": {
+		"reset_password": "Forget password? reset it here",
+		"needfullemail": "Full email address is required",
+		"resetpasswordresult": "Reset password instruction has been sent to your email, check your email now please",
+		"resendverificationemail": "Resend verification email",
+		"verificationEmailSent": "Verification Email has been sent",
+		"resendVerificationEmailLater": "seconds later could send again",
+		"verify": {
+			"error": {
+				"ACCOUNT_ALREADY_VERIFIED": "This account has been verified",
+				"ACCOUNT_USER_NOT_FOUND": "Account does not exist",
+				"VERIFICATION_CODE_EXPIRED": "15 minutes waiting time expired"
+			},
+			"message": {
+				"EMAIL_VERIFIED": "Verified Successfully",
+				"YOU_ARE_VERIFYING": "Verifying"
+			},
+			"needRelogin": "Please login again"
+		}
+	},
+	"comment": {
+		"hide": "Hide Discussion",
+		"show": "Show Discussion",
+		"zone": "Discussion Borad",
+		"fortodo": "Comment to:",
+		"forcomment": "Reply to:",
+		"markdown_enabled": "Markdown is enabled"
+	},
+	"userSession": {
+		"kickout": "abnormal refreshs detected-session terminated",
+		"forcetohome": "abnormal refreshs detected-force to home",
+		"relogin": "You need to relogin"
+	},
+	"error": {
+		"NO_BRUTE": "Please don't operate too frequently",
+		"LOGIN_EMAILVERIFIED_FALSE": "Email Verification is required",
+		"login_no_account": "Account does not exist",
+		"duplicated_object": "Duplicated Objects",
+		"password_format": "Password length should be between 6-12, upper case, lower case letters and special characters must be included",
+		"username_format": "User name length should be between 4-12, upper case, lower case lettersand numbers are allowed",
+		"email_exist": "Email has been registered",
+		"wfid_exist": "wfid already",
+		"login_failed": "Login failed，check ID or password pls.",
+		"ORGCHART_ENTRY_KEEP_LAST_ONE": "This is the only one entry, delete email if confirmed",
+		"couldnotdisplayfile": "Your browser does not show this sort of tile, download it instead.",
+		"wnf": {
+			"title": "Error",
+			"subtitle": "Workflow Not Found",
+			"info": "Workflow {wfid} does not exist or you have no access to it",
+			"btntitle": "Back"
+		},
+		"notfound": "Not Found or no access right",
+		"notyourwork": "This work is not yours"
+	},
+	"searchlet": {
+		"new": "Save query",
+		"save": "Save",
+		"cancel": "Cancel",
+		"existing": "Saved Query",
+		"nameit": "Give it a name, will replace exiting if duplicate",
+		"pick": "Pick on please-->",
+		"reset": "Reset Query"
+	},
+	"pagination": {
+		"first": "Fist",
+		"prev": "Previous",
+		"next": "Next",
+		"last": "Last"
+	},
+	"notify": {
+		"create_template_success": "Template {tplid} created successfully",
+		"create_adhoc_success": "Adhoc Task dispatched",
+		"auto_refresh_work": "Auto retrieve tasks in {minutes} mins.",
+		"stop_refresh_work": "Stop auto retrieving, click [Reset/All] to get new tasks manually",
+		"set_password_success": "Set new password successfully",
+		"employee_account_selected": "selected {number} employee account(s)",
+		"only_admin": "Only Administrator has access to operations in this section"
+	},
+	"flexible": {
+		"title": "Flexible arrangement",
+		"subtitle": "Arrange a task to other people, no need to design workflow template first",
+		"placeholder": "Input issue name",
+		"btn_goto_template": "Start a new task",
+		"btn_showform": "Start a flexible issue",
+		"menu": "Adhoc Task",
+		"btn_create": "Start it",
+		"res_success": "Started, see it in 'My Task'",
+		"pickeid": "Recent",
+		"forWhom": "For people"
+	},
+	"homecard": {
+		"menu": {
+			"todos": {
+				"ST_RUN": "Todo",
+				"ST_DONE": "Done",
+				"ST_FOOTPRINT": "Footprint",
+				"startWorkflow": "Start"
+			}
+		},
+		"template": {
+			"title": "Template",
+			"body": "Arrange tasks in a standard way"
+		},
+		"flexible": {
+			"title": "Flexible",
+			"body": "Arrange tasks in a flexible way"
+		},
+		"workflow": {
+			"title": "Monitor",
+			"body": "Monitor running status"
+		},
+		"work": {
+			"title": "Worklist",
+			"body": "See current worklist"
+		},
+		"discuss": {
+			"title": "Discuss",
+			"body": "Discuss on certain tasks"
+		},
+		"setting": {
+			"title": "Setting",
+			"body": "Customize your work environment"
+		},
+		"help": {
+			"title": "Help",
+			"body": "Help, Q&A etc."
+		},
+		"myfile": {
+			"title": "My Files",
+			"body": "File uploaded by me"
+		}
+	},
+	"tips": {
+		"orgtag": {
+			"title": "Org-level Tags",
+			"content": "Set by administrators, click to see details"
+		},
+		"flexible": {
+			"title": "Flexible Actions",
+			"content": "Start to arrange tasks in a flexible way."
+		},
+		"newwork": {
+			"title": "Start a new planned workflow",
+			"content": "Select a planned workflow and start it"
+		},
+		"check_email_please": "Check email please",
+		"designer": {
+			"action": {
+				"allowpbo": {
+					"title": "Whether allow user to",
+					"content": "Modify PBO on this step"
+				}
+			},
+			"kvar": {
+				"btn": {
+					"dash": {
+						"title": "Delete",
+						"content": "Click to delete this variable"
+					},
+					"plus": {
+						"title": "Add",
+						"content": "Click to create a new variable"
+					},
+					"up": {
+						"title": "Click to move up",
+						"content": "Shift-Click to copy to upper"
+					},
+					"down": {
+						"title": "Click to move down",
+						"content": "Shift-Click to copy to lower"
+					},
+					"double-up": {
+						"title": "Click to move to top",
+						"content": "Shift-Click to copy to top"
+					},
+					"double-down": {
+						"title": "Click to move to bottom",
+						"content": "Shift-Click to copy to bottom"
+					}
+				}
+			}
+		}
+	},
+	"search": {
+		"condition": {
+			"all": "All",
+			"template": "Search '{pattern}', Author: {author}"
+		}
+	},
+	"unit": {
+		"days": "Days",
+		"hours": "Hours",
+		"tasks": "Tasks",
+		"nodes": "Steps"
+	},
+	"mining": {
+		"total": "{number} of {total}",
+		"work_redlight_threshold": "Task Redlight Threshold",
+		"process_redlight_threshold": "Process Redlight Threshold",
+		"OR": "or",
+		"AND": "and",
+		"process_threshold": "Process longer than",
+		"redlight_threshold": "Tasks longer than",
+		"show": {
+			"show": "Show",
+			"works": "Process Steps",
+			"todos": "Individual Tasks",
+			"only_above_threshold": "Only above threshold",
+			"with_process": "Include",
+			"with_todos": "Include"
+		},
+		"nav": {
+			"time": "by Time",
+			"people": "by People"
+		},
+		"task": {
+			"number": "Task Number",
+			"longest": "Task Longest Lasting",
+			"average": "Task Average Lasting",
+			"total": "Task Total Lasting",
+			"processes": "Started processes"
+		}
+	},
+	"kshare": {
+		"title": "Process Hub",
+		"description": "Management process best practice provided by domain exports, you may import and use them with one-click",
+		"all_scenarios": "All Scenarios",
+		"all_industries": "All Industries",
+		"topmenu": {
+			"All": "All",
+			"Scenarios": "Scenarios",
+			"Industries": "Industries",
+			"Tags": "Filters",
+			"pickedtags": "Picked tags"
+		},
+		"label": {
+			"All": "All",
+			"Close": "Close",
+			"Preview": "Preview",
+			"Pick": "Pick it",
+			"Confirm": "Confirm",
+			"Cancel": "Cancel",
+			"only12": "Only show 12 randomly, click here to see them all"
+		},
+		"search": {
+			"byname": "by name",
+			"byauthor": "by author",
+			"q": {
+				"placeholder": "by name or description"
+			},
+			"author": {
+				"placeholder": "by author"
+			}
+		},
+		"pickit": {
+			"placeholder": "Give it a name",
+			"pickas": "Take it as:",
+			"error": {
+				"no_user": "Please login first",
+				"exists": {
+					"title": "This template already exists",
+					"body": "Please modify and try again"
+				}
+			},
+			"result": {
+				"success": "Import successfully, go to templates menu to see it"
+			}
+		},
+		"shareform": {
+			"name": "Share as",
+			"desc": "Description",
+			"price": "Price",
+			"scenario": "Pick Scenario Tag",
+			"add": "Add"
+		}
+	},
+	"cron": {
+		"title": {
+			"expr": "Crontab Expression",
+			"month": "Month",
+			"date": "Date",
+			"weekday": "WDay",
+			"hour": "Hour",
+			"result": "Result",
+			"notset": "Not Set",
+			"single": "Single",
+			"range": "Range",
+			"every": "every",
+			"from": "From",
+			"to": "to",
+			"and": "and"
+		},
+		"month": {
+			"0": "Not Set",
+			"1": "January",
+			"2": "February",
+			"3": "March",
+			"4": "April",
+			"5": "May",
+			"6": "June",
+			"7": "July",
+			"8": "August",
+			"9": "September",
+			"10": "October",
+			"11": "November",
+			"12": "December"
+		},
+		"weekday": {
+			"0": "Not Set",
+			"1": "Monday",
+			"2": "Tuesday",
+			"3": "Wednesday",
+			"4": "Tursday",
+			"5": "Friday",
+			"6": "Saturday",
+			"7": "Sundy"
+		},
+		"date": {
+			"unit": "D"
+		},
+		"hour": {
+			"unit": "H"
+		},
+		"miniute": {
+			"unit": "M"
+		}
+	},
+	"popover": {
+		"postpone": {
+			"title": "Postpone",
+			"content": "Postpone to selected days"
+		}
+	},
+	"server": {
+		"DELEGATE_FAILED_SAME_USER": "Can't delegate to self",
+		"DELEGATE_FAILED_NOT_SAME_ORG": "Not in the same organization",
+		"DELEGATE_FAILED_OVERLAP": "Delegation failed overlap exists",
+		"FETCH_FAILED": "The network is wandering. Try again later"
+	},
+	"message": {
+		"success": "成功",
+		"switch_tenant_success": "Switch tenant successfully",
+		"saved": "saved",
+		"personal_menuitem_saved": "Personal menu item saved"
+	},
+	"tag": {
+		"all": "All"
+	},
+	"MyPersonal": "MyPersonal",
+	"biz": {
+		"todos": "My Todos",
+		"recentdone": "Done Recently",
+		"recentprocess": "Processes Invovled",
+		"basic_op": "Baisc Operations",
+		"advanced_op": "More Operations",
+		"op": {
+			"startProcess": "Start New Process",
+			"seeDesign": "View Busienss Desin",
+			"editDesign": "Change Business Design",
+			"allbiz": "All business",
+			"export": "Export",
+			"snapshot": "Snapshot",
+			"mining": "Business Mining"
+		},
+		"adv": {
+			"all_todos": "All Tasks",
+			"all_biz": "All Business",
+			"discuss": "Forum",
+			"share": "Share to Processhub"
+		}
+	},
+	"quote": {
+		"subject": {
+			"1": "运营自动化",
+			"2": "工业自动化",
+			"3": "销售自动化"
+		},
+		"name": {
+			"1": "袁女士 · 普吉岛",
+			"2": "张总 · 莫纳生物",
+			"3": "Lucas · 亚马逊"
+		},
+		"quote": {
+			"1": "ProcessHub让我能够更加高效地完成工作，<br/>让我能够更加专注于创造价值",
+			"2": "ProcessHub让我能够更加高效地完成工作，<br/>让我能够更加专注于创造价值",
+			"3": "ProcessHub让我能够更加高效地完成工作，<br/>让我能够更加专注于创造价值"
+		}
+	},
+	"solutions": {
+		"manufacture": "DigiMake",
+		"sales": "DigiSales",
+		"crm": "DigiService",
+		"manager": "DigiManager"
+	},
+	"evaluate": {
+		"youwill": "You are evaluating the workflow below",
+		"account": {
+			"prompt": "Seems that you have not logged in, what would you like? ",
+			"login": "use existing account，login now",
+			"register": "Register a new account",
+			"demo": "Try under a temporary one-time account. Register a formal account is strongly recommended."
+		},
+		"start": "Evaluate under account ({account}) ",
+		"waitForFirstTodo": "Workflow {wfid} has been started. Wait a moment, you are on the way to the first step ({countdown})..."
+	},
+	"addCurrent": "Add page",
+	"boolean": {
+		"true": "Yes",
+		"false": "No"
+	},
+	"bizpicker": {
+		"pickone": "Pick one template",
+		"picknone": "Not specified",
+		"desc": "Please pick one business template from next list. or",
+		"button": "Select a template, current: ",
+		"none": "Not specified"
+	},
+	"uisection": {
+		"tag": "Tag",
+		"search": "Search",
+		"sort": "Sorting",
+		"layout": "Layout"
+	},
+	"sign": {
+		"title": "Signature",
+		"reset": "Reset",
+		"uselast": "Use last",
+		"waitforsignature": "(Sign first pls)"
+	},
+	"input": {
+		"should_have_value": "{key} should have value",
+		"should_have_value_number": "{key} should have a number",
+		"should_have_value_file": "{key} should have a file"
+	},
+	"notify": {
+		"title": "Notification",
+		"welcome": "Welcome"
+	}
+}
