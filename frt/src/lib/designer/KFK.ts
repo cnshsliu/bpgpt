@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { API_SERVER } from '$lib/Env';
+import Joi from 'joi';
 import { _ } from '$lib/i18n';
 import suuid from 'short-uuid';
 import Parser from '$lib/parser';
@@ -14,6 +15,60 @@ import NodeController from './NodeController';
 import * as api from '$lib/api';
 import type { NodePropJSON } from '$lib/types';
 let I18N: any;
+
+const defaultAiValue = {
+	pre: {
+		enable: true,
+		prompt: {
+			system: '',
+			assistants: [''],
+			user: '',
+		},
+	},
+	atwork: {
+		enable: true,
+		prompt: {
+			system: '',
+			assistants: [''],
+			user: '',
+		},
+	},
+	post: {
+		enable: true,
+		prompt: {
+			system: '',
+			assistants: [''],
+			user: '',
+		},
+	},
+};
+
+const aiSchema = Joi.object({
+	pre: Joi.object({
+		enable: Joi.boolean().required(),
+		prompt: Joi.object({
+			system: Joi.string().required().allow(''),
+			user: Joi.string().required().allow(''),
+			assistants: Joi.array().items(Joi.string().allow('')).required(),
+		}),
+	}),
+	atwork: Joi.object({
+		enable: Joi.boolean().required(),
+		prompt: Joi.object({
+			system: Joi.string().required().allow(''),
+			user: Joi.string().required().allow(''),
+			assistants: Joi.array().items(Joi.string().allow('')).required(),
+		}),
+	}),
+	post: Joi.object({
+		enable: Joi.boolean().required(),
+		prompt: Joi.object({
+			system: Joi.string().required().allow(''),
+			user: Joi.string().required().allow(''),
+			assistants: Joi.array().items(Joi.string().allow('')).required(),
+		}),
+	}),
+});
 
 _.subscribe((value) => {
 	I18N = value;
@@ -1012,6 +1067,7 @@ class KFKclass {
 				repeaton: '',
 				cronrun: 0,
 				cronexpr: '',
+				ai: defaultAiValue,
 			},
 			SCRIPT: { id: '', label: '', code: '', runmode: 'ASYNC' },
 			INFORM: { id: '', label: '', role: '', cc: '', subject: '', content: '' },
@@ -1077,7 +1133,23 @@ class KFKclass {
 
 			let str = blankToDefault(jqDIV.find('code').first().text(), '').trim();
 			str = that.base64ToCode(str);
+
 			ret.ACTION.code = str;
+
+			str = blankToDefault(jqDIV.find('ai').first().text(), '').trim();
+			try {
+				if (str) {
+					str = that.base64ToCode(str);
+					ret.ACTION.ai = JSON.parse(str);
+					const validateResult = aiSchema.validate(ret.ACTION.ai);
+					if (validateResult.error) {
+						console.log(validateResult.error);
+						ret.ACTION.ai = defaultAiValue;
+					}
+				}
+			} catch (e: any) {
+				console.log(e.message);
+			}
 		} else if (jqDIV.hasClass('SCRIPT')) {
 			ret.SCRIPT.id = jqDIV.attr('id');
 			ret.SCRIPT.runmode = jqDIV.attr('runmode') ? jqDIV.attr('runmode') : 'SYNC';
@@ -1190,6 +1262,14 @@ ret='DEFAULT'; `,
 			} else {
 				jqDIV.append('<code>' + codeInBase64 + '</code>');
 			}
+			let aiJSONString = this.codeToBase64(JSON.stringify(propJSON.ai));
+			if (jqDIV.find('ai').length > 0) {
+				if (jqDIV.find('ai').first().text().trim() !== aiJSONString) {
+					jqDIV.find('ai').prop('innerText', aiJSONString);
+				}
+			} else {
+				jqDIV.append('<ai>' + aiJSONString + '</ai>');
+			}
 		} else if (jqDIV.hasClass('SCRIPT')) {
 			propJSON = props.SCRIPT;
 			this.setNodeLabel(jqDIV, propJSON.label);
@@ -1264,6 +1344,7 @@ ret='DEFAULT'; `,
 		}
 		this.onChange('Property Changed');
 	}
+
 	//on click node, node prop
 	async showNodeProperties(jqDIV: myJQuery) {
 		//eslint-disable-next-line  @typescript-eslint/no-this-alias
@@ -2522,10 +2603,6 @@ ret='DEFAULT'; `,
 				variant,
 				realX,
 				realY,
-				undefined,
-				undefined,
-				'',
-				'',
 			);
 			that.addMobileHandler([jqDIV]);
 			that.addNodeIdDIV([jqDIV]);
@@ -3136,13 +3213,13 @@ ret='DEFAULT'; `,
 		x: number,
 		y: number,
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		_w: number,
+		_w: number = 0,
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		_h: number,
+		_h: number = 0,
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		_attach: any,
+		_attach: any = null,
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		_attach2: any,
+		_attach2: any = null,
 	): Promise<myJQuery> {
 		//eslint-disable-next-line  @typescript-eslint/no-this-alias
 		const that = this;

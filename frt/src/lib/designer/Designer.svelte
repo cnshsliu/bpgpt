@@ -7,7 +7,7 @@
 	import suuid from 'short-uuid';
 	import { Status } from '$lib/status';
 	import { wfMonitorInterval, filterStorage } from '$lib/mtcLocalStores';
-  import { deviceIsMobile } from '$lib/Stores';
+	import { deviceIsMobile } from '$lib/Stores';
 	import * as api from '$lib/api';
 	import { page } from '$app/stores';
 	import { createEventDispatcher, setContext, getContext } from 'svelte';
@@ -140,7 +140,7 @@
 				}
 			}
 			nodeInfo.nodeProps.kvarsArr = kvarsArr;
-		}
+ 		}
 		if (nodeInfo.nodeType === 'SUB') {
 			let templates = await api.post(
 				'template/search',

@@ -682,6 +682,21 @@ const internals = {
 		},
 		{
 			method: "POST",
+			path: "/tnt/set/openaiapikey",
+			handler: Handlers.OrgSetOpenAiAPIKey,
+			config: {
+				tags: ["api"],
+				description: "Set OpenAI API Key for current tenant",
+				auth: "token",
+				validate: {
+					headers: Joi.object({ Authorization: Joi.string() }).unknown(),
+					payload: { openaiapikey: Joi.string().required() },
+					validator: Joi,
+				},
+			},
+		},
+		{
+			method: "POST",
 			path: "/tnt/set/menu",
 			handler: Handlers.OrgSetMenu,
 			config: {

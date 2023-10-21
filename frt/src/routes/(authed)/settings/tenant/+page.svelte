@@ -49,6 +49,7 @@
 	let orgname = '';
 	let orgtheme = '';
 	let orgtimezone = '';
+	let openaiapikey = '';
 	let orgleveltags = '';
 	let orgchartadmin = '';
 	let orgchartadmin_array: { eid: string; cn: string }[] = [];
@@ -58,9 +59,9 @@
 	let userDefinedJoinCode = '';
 	let in_progress: boolean;
 
-	let password_for_admin = '';
-	let set_group_to = '';
-	let set_password_to = '';
+	// let password_for_admin = '';
+	// let set_group_to = '';
+	// let set_password_to = '';
 	let tzArray = TimeZone.getTimeZoneArray();
 	let invitation: string;
 
@@ -89,14 +90,6 @@
 		} else {
 			orgchartadmin_array = res;
 		}
-	};
-
-	let orgchartrelationtest_conf = {
-		show: { leader: true, query: true },
-		useThisQuery: null,
-		useThisLeader: null,
-		lstr: '',
-		qstr: '',
 	};
 
 	async function setMyTenantName() {
@@ -134,6 +127,34 @@
 			if (ret.css) {
 				console.log(ret.css);
 				setFadeMessage('Orgniazation theme is set succesfully', 'success');
+				const response = (await post(`/auth/refresh`, {})) as unknown as EmpResponse;
+
+				if (response.user) {
+					console.log(response.user);
+					invalidateAll();
+				}
+			} else {
+				setFadeMessage('Error', 'warning');
+			}
+		}
+
+		in_progress = false;
+	}
+
+	async function setMyOpenAiAPIKey() {
+		in_progress = true;
+
+		let ret = await api.post(
+			'tnt/set/openaiapikey',
+			{ openaiapikey: openaiapikey },
+			$page.data.user.sessionToken,
+		);
+		if (ret.error) {
+			setFadeMessage(ret.message, 'warning');
+		} else {
+			//eslint-disable-next-line
+			if (ret.openaiapikey) {
+				setFadeMessage(`OpenAi API Key set to "${ret.openaiapikey}" succesfully`, 'success');
 				const response = (await post(`/auth/refresh`, {})) as unknown as EmpResponse;
 
 				if (response.user) {
@@ -417,6 +438,7 @@
 								{$_('button.set')}
 							</Button>
 						</InputGroup>
+
 						<InputGroup class="mb-1">
 							<InputGroupText>{$_('setting.tenant.orgtags')}</InputGroupText>
 							<!-- Convert 全角标点符号到半角标点符号 -->
@@ -429,57 +451,47 @@
 								{$_('button.set')}
 							</Button>
 						</InputGroup>
-						<InputGroup class="mb-1">
+
+						<!-- <InputGroup class="mb-1">
 							<input
 								class="ms-3 form-check-input"
 								type="checkbox"
-								bind:checked={myorg.regfree}
+								bind:checked={myorg.allowemptypbo}
 								on:change={async (e) => {
 									e.preventDefault();
 
 									let ret = await api.post(
-										'tnt/set/regfree',
-										{ regfree: myorg.regfree },
+										'tnt/set/allowemptypbo',
+										{ allow: myorg.allowemptypbo },
 										$page.data.user.sessionToken,
 									);
 									if (ret.error) {
 										setFadeMessage(ret.message, 'warning');
 									} else {
-										if (myorg.regfree) {
-											setFadeMessage($_('setting.tenant.regfree_true'));
+										if (ret.allowemptypbo) {
+											setFadeMessage($_('setting.tenant.allowemptypbo_true'));
 										} else {
-											setFadeMessage($_('setting.tenant.regfree_false'));
+											setFadeMessage($_('setting.tenant.allowemptypbo_false'));
 										}
+										console.log(ret.allowemptypbo);
 									}
 								}} />
-							{$_(`setting.tenant.allow_regfree`)}
+							{$_('setting.tenant.allowemptypbo')}
+						</InputGroup> -->
+						<InputGroup class="mb-1">
+							<InputGroupText>{$_('setting.tenant.openaiapikey')}</InputGroupText>
+							<Input
+								type="text"
+								bind:value={openaiapikey}>
+							</Input>
+							<Button
+								on:click={(e) => {
+									e.preventDefault();
+									setMyOpenAiAPIKey();
+								}}>
+								{$_('button.set')}
+							</Button>
 						</InputGroup>
-						<!-- <InputGroup class="mb-1"> -->
-						<!-- 	<input -->
-						<!-- 		class="ms-3 form-check-input" -->
-						<!-- 		type="checkbox" -->
-						<!-- 		bind:checked={myorg.allowemptypbo} -->
-						<!-- 		on:change={async (e) => { -->
-						<!-- 			e.preventDefault(); -->
-
-						<!-- 			let ret = await api.post( -->
-						<!-- 				'tnt/set/allowemptypbo', -->
-						<!-- 				{ allow: myorg.allowemptypbo }, -->
-						<!-- 				$page.data.user.sessionToken, -->
-						<!-- 			); -->
-						<!-- 			if (ret.error) { -->
-						<!-- 				setFadeMessage(ret.message, 'warning'); -->
-						<!-- 			} else { -->
-						<!-- 				if (ret.allowemptypbo) { -->
-						<!-- 					setFadeMessage($_('setting.tenant.allowemptypbo_true')); -->
-						<!-- 				} else { -->
-						<!-- 					setFadeMessage($_('setting.tenant.allowemptypbo_false')); -->
-						<!-- 				} -->
-						<!-- 				console.log(ret.allowemptypbo); -->
-						<!-- 			} -->
-						<!-- 		}} /> -->
-						<!-- 	{$_('setting.tenant.allowemptypbo')} -->
-						<!-- </InputGroup> -->
 						{#if !myorg.orgmode}
 							<Button
 								class="upgrade"
@@ -489,19 +501,19 @@
 								{$_('button.upgrade')}
 							</Button>
 						{/if}
+						<InputGroup class="mb-1">
+							<InputGroupText>{$_('setting.tenant.ocadmins')}</InputGroupText>
+							<Input
+								type="text"
+								bind:value={orgchartadmin}
+								placeholder={$_('setting.tenant.ocadmins_ph')} />
+							<Button on:click={handleClickAddOrgchartAdmin}>{$_('button.add')}</Button>
+						</InputGroup>
 						<Container class="pt-4">
-							<InputGroup class="mb-1">
-								<InputGroupText>{$_('setting.tenant.ocadmins')}</InputGroupText>
-								<Input
-									type="text"
-									bind:value={orgchartadmin}
-									placeholder={$_('setting.tenant.ocadmins_ph')} />
-								<Button on:click={handleClickAddOrgchartAdmin}>{$_('button.add')}</Button>
-							</InputGroup>
 							{#each orgchartadmin_array as anAdmin}
 								<span
 									class="pe-3"
-                  role="none"
+									role="none"
 									on:mouseover={() => {
 										currentAdmin = anAdmin.eid;
 									}}
@@ -533,6 +545,31 @@
 								</span>
 							{/each}
 						</Container>
+						<InputGroup class="mb-1 mt-2">
+							<input
+								class="ms-3 form-check-input"
+								type="checkbox"
+								bind:checked={myorg.regfree}
+								on:change={async (e) => {
+									e.preventDefault();
+
+									let ret = await api.post(
+										'tnt/set/regfree',
+										{ regfree: myorg.regfree },
+										$page.data.user.sessionToken,
+									);
+									if (ret.error) {
+										setFadeMessage(ret.message, 'warning');
+									} else {
+										if (myorg.regfree) {
+											setFadeMessage($_('setting.tenant.regfree_true'));
+										} else {
+											setFadeMessage($_('setting.tenant.regfree_false'));
+										}
+									}
+								}} />
+							{$_(`setting.tenant.allow_regfree`)}
+						</InputGroup>
 					</CardBody>
 				</Card>
 			</form>

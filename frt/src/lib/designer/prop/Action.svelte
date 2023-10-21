@@ -2,7 +2,6 @@
 	import { _, locale } from '$lib/i18n';
 	import Parser from '$lib/parser';
 	import { filterStorage } from '$lib/mtcLocalStores';
-	import { ClientPermControl } from '$lib/clientperm';
 	import * as api from '$lib/api';
 	import CronBuilder from '$lib/CronBuilder.svelte';
 	import { page } from '$app/stores';
@@ -26,8 +25,8 @@
 		TabPane,
 		TabContent,
 	} from 'sveltestrap';
-	import type { KVarDefInput, Workflow, Template } from '$lib/types';
-	import { createEventDispatcher, setContext, getContext } from 'svelte';
+	import type { KVarDefInput, Workflow } from '$lib/types';
+	import { setContext, getContext } from 'svelte';
 	import { onMount } from 'svelte';
 	import RolePicker from '$lib/designer/prop/RolePicker.svelte';
 
@@ -40,18 +39,14 @@
 	export let workid: string;
 	export let jq: any;
 	export let KFK: any;
-	let todos = [];
-	let errmsg = '';
+	let todos: any[] = [];
 
 	setContext('theProp', nodeInfo.nodeProps.ACTION);
 
-	let oldId = nodeInfo.nodeProps.ACTION.id;
 	let TimeTool: any = null;
 	let helpShowing = false;
-	let thePDSResolver;
+	let thePDSResolver: any;
 	const workflow: Workflow = getContext('workflow');
-	const template: Template = getContext('template');
-	const dispatch = createEventDispatcher();
 
 	let doerHTML = '';
 	if (nodeInfo.nodeProps.ACTION.doer) {
@@ -67,12 +62,7 @@
 		}
 	}
 
-	let theTab = $filterStorage.tabs;
-	// if (['participant', 'instruct', 'variables'].includes(theTab) === false) {
-	// 	$filterStorage.tabs = 'participant';
-	// }
-
-	const setTab = function (tabname, firstLevel = true) {
+	const setTab = function (tabname: string, firstLevel = true) {
 		if (firstLevel) $filterStorage.tabs = tabname;
 		else $filterStorage.tabs2nd = tabname;
 
@@ -94,7 +84,7 @@
 			}
 		}
 	};
-	const isActive = function (tabname, firstLevel = true) {
+	const isActive = function (tabname: string, firstLevel = true) {
 		if (firstLevel) {
 			let tabs = $filterStorage.tabs;
 			if (!tabs) {
@@ -120,7 +110,7 @@
 			const popoverTriggerList = [].slice.call(
 				document.querySelectorAll('[data-bs-toggle="popover"]'),
 			);
-			const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+			popoverTriggerList.map(function (popoverTriggerEl) {
 				return new bootstrap.Popover(popoverTriggerEl);
 			});
 		});
@@ -174,7 +164,7 @@
 	<TabContent
 		pills
 		on:tab={(e) => {
-			setTab(e.detail);
+			setTab(String(e.detail));
 		}}>
 		<TabPane
 			tabId="ai"
@@ -295,7 +285,7 @@
 			</InputGroup>
 			<Button
 				color="primary"
-				on:click={(e) => {
+				on:click={() => {
 					previewInstruct = !previewInstruct;
 				}}>
 				{#if previewInstruct}
@@ -379,7 +369,7 @@
 							<Input
 								bind:value={kvar.name}
 								disabled={readonly}
-								on:blur={(e) => {
+								on:blur={() => {
 									kvar.name = Parser.toValidVarName(kvar.name);
 								}} />
 							<InputGroupText>
@@ -398,8 +388,8 @@
 								</InputGroupText>
 								<Input
 									bind:value={kvar.options}
-									on:change={(e) => {
-										kvar.options = qtb(kvar.options);
+									on:change={() => {
+										kvar.options = qtb(kvar.options ?? '');
 									}}
 									disabled={readonly}
 									placeholder={kvar.name.startsWith('ou_')
@@ -440,8 +430,8 @@
 								</InputGroupText>
 								<Input
 									bind:value={kvar.coldef}
-									on:change={(e) => {
-										kvar.coldef = qtb(kvar.coldef);
+									on:change={() => {
+										kvar.coldef = qtb(kvar.coldef ?? '');
 									}}
 									disabled={readonly}
 									placeholder={$_('prop.action.kvar.tbl_placeholder')} />
@@ -513,8 +503,8 @@
 										<table>
 											<tr>
 												<td>
-													<Button
-														class="m-0 p-0"
+													<button
+														class="btn m-0 p-0"
 														data-bs-trigger="hover"
 														data-bs-toggle="popover"
 														data-bs-placement="top"
@@ -526,11 +516,11 @@
 															kvarsArr = kvarsArr;
 														}}>
 														<Icon name="dash" />
-													</Button>
+													</button>
 												</td>
 												<td>
-													<Button
-														class="m-0 p-0"
+													<button
+														class="btn m-0 p-0"
 														data-bs-trigger="hover"
 														data-bs-toggle="popover"
 														data-bs-placement="top"
@@ -549,13 +539,13 @@
 															kvarsArr = kvarsArr;
 														}}>
 														<Icon name="plus" />
-													</Button>
+													</button>
 												</td>
 											</tr>
 											<tr>
 												<td>
-													<Button
-														class="m-0 p-0"
+													<button
+														class="btn m-0 p-0"
 														data-bs-trigger="hover"
 														data-bs-toggle="popover"
 														data-bs-placement="top"
@@ -573,11 +563,11 @@
 															kvarsArr = kvarsArr;
 														}}>
 														<Icon name="chevron-up" />
-													</Button>
+													</button>
 												</td>
 												<td>
-													<Button
-														class="m-0 p-0"
+													<button
+														class="btn m-0 p-0"
 														data-bs-trigger="hover"
 														data-bs-toggle="popover"
 														data-bs-placement="top"
@@ -595,13 +585,13 @@
 															kvarsArr = kvarsArr;
 														}}>
 														<Icon name="chevron-double-up" />
-													</Button>
+													</button>
 												</td>
 											</tr>
 											<tr>
 												<td>
-													<Button
-														class="m-0 p-0"
+													<button
+														class="btn m-0 p-0"
 														data-bs-trigger="hover"
 														data-bs-toggle="popover"
 														data-bs-placement="top"
@@ -619,11 +609,11 @@
 															kvarsArr = kvarsArr;
 														}}>
 														<Icon name="chevron-down" />
-													</Button>
+													</button>
 												</td>
 												<td>
-													<Button
-														class="m-0 p-0"
+													<button
+														class="btn m-0 p-0"
 														data-bs-trigger="hover"
 														data-bs-toggle="popover"
 														data-bs-placement="top"
@@ -641,7 +631,7 @@
 															kvarsArr = kvarsArr;
 														}}>
 														<Icon name="chevron-double-down" />
-													</Button>
+													</button>
 												</td>
 											</tr>
 										</table>
@@ -804,7 +794,7 @@
 						</InputGroup>
 					</Col>
 				</Row>
-				{#each todos as todo, index}
+				{#each todos as todo}
 					<Row>
 						{#if user.group === 'ADMIN' && todo.status === 'ST_RUN'}
 							workid: {workid} / todoid: {todo.todoid}

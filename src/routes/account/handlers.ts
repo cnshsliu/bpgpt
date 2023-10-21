@@ -87,6 +87,7 @@ const buildSessionResponse = async (
 				name: tenant?.name,
 				orgmode: tenant?.orgmode,
 				timezone: tenant?.timezone,
+				openaiapikey: tenant?.openaiapikey,
 			},
 			nickname: employee?.nickname,
 			signature: employee?.signature,
@@ -1215,7 +1216,6 @@ async function OrgSetTimezone(req: Request, h: ResponseToolkit) {
 			const PLD = req.payload as any;
 			const CRED = req.auth.credentials as any;
 			expect(CRED.employee.group).to.equal("ADMIN");
-			let tenant_id = CRED.tenant._id.toString();
 
 			Cache.removeOrgRelatedCache(CRED.tenant._id, "OTZ");
 
@@ -1225,6 +1225,26 @@ async function OrgSetTimezone(req: Request, h: ResponseToolkit) {
 				{ new: true },
 			);
 			return { timezone: tenant.timezone };
+		}),
+	);
+}
+
+async function OrgSetOpenAiAPIKey(req: Request, h: ResponseToolkit) {
+	return h.response(
+		await MongoSession.noTransaction(async () => {
+			const PLD = req.payload as any;
+			const CRED = req.auth.credentials as any;
+			expect(CRED.employee.group).to.equal("ADMIN");
+
+			Cache.removeOrgRelatedCache(CRED.tenant._id, "OPENAI_API_KEY");
+
+			let tenant = await Tenant.findOneAndUpdate(
+				{ _id: CRED.tenant._id },
+				{ $set: { openaiapikey: PLD.openaiapikey } },
+				{ new: true },
+			);
+			console.log(tenant);
+			return { openaiapikey: tenant.openaiapikey };
 		}),
 	);
 }
@@ -2178,6 +2198,7 @@ export default {
 	OrgSetName,
 	OrgSetTheme,
 	OrgSetTimezone,
+	OrgSetOpenAiAPIKey,
 	OrgSetTags,
 	OrgSetMenu,
 	JoinOrg,

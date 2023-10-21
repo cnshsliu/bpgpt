@@ -494,7 +494,7 @@
 		</div>
 		<div
 			class="btn btn-primary m-0 p-1 btn-lg"
-      role="none"
+			role="none"
 			on:click={() => {
 				resetQuery(true);
 			}}
@@ -547,7 +547,7 @@
 								bind:value={$filterStorage[BIZ].pattern} />
 							<div
 								class="btn btn-primary"
-                role="none"
+								role="none"
 								on:keydown={() => {}}
 								on:keyup={() => {}}
 								on:keypress={() => {}}
@@ -570,7 +570,7 @@
 							placeholder={$_('remotetable.byauthor')} />
 						<div
 							class="btn btn-primary"
-              role="none"
+							role="none"
 							on:keydown={() => {}}
 							on:keyup={() => {}}
 							on:keypress={() => {}}
@@ -651,7 +651,7 @@
 								<Col class="col-8">
 									<div
 										class="btn btn-primary h-100 w-100"
-                    role="none"
+										role="none"
 										on:keydown={() => {}}
 										on:keyup={() => {}}
 										on:keypress={() => {}}
@@ -688,7 +688,7 @@
 								<Col class="col-4">
 									<div
 										class="btn btn-primary h-100 w-100"
-                    role="none"
+										role="none"
 										on:keydown={() => {}}
 										on:keyup={() => {}}
 										on:keypress={() => {}}
@@ -746,7 +746,7 @@
 										<Col class="col-8">
 											<div
 												class="btn btn-primary h-100 w-100"
-                        role="none"
+												role="none"
 												on:click|preventDefault={importTemplate}
 												on:keydown={() => {}}
 												on:keyup={() => {}}
@@ -758,7 +758,7 @@
 										<Col class="col-4">
 											<div
 												class="btn btn-secondary h-100 w-100"
-                        role="none"
+												role="none"
 												color="secondary"
 												on:click|preventDefault={() => {
 													showform = '';
@@ -863,7 +863,7 @@
 						<div class="col">
 							<div
 								class="btn m-0 p-1 kfk-link"
-                role="none"
+								role="none"
 								on:click|preventDefault={() => (multiple_selecting = !multiple_selecting)}
 								on:keydown={() => {}}
 								on:keyup={() => {}}
@@ -881,7 +881,7 @@
 					<Row>
 						<div
 							class="btn col kfk-link"
-              role="none"
+							role="none"
 							on:click|preventDefault={() => {
 								for (let r = 0; r < rows.length; r++) {
 									rows[r].checked = true;
@@ -894,7 +894,7 @@
 						</div>
 						<div
 							class="btn col kfk-link"
-              role="none"
+							role="none"
 							on:click|preventDefault={() => {
 								for (let r = 0; r < rows.length; r++) {
 									rows[r].checked = false;
@@ -908,7 +908,7 @@
 						{#if rows.filter((x) => x.checked).length > 0}
 							<div
 								class="btn col kfk-link"
-                role="none"
+								role="none"
 								on:click|preventDefault={() => {
 									__deleteTemplateMultiple();
 								}}
@@ -977,23 +977,27 @@
 										<table>
 											<tr>
 												<td>
-													<!--  模板的封面 -->
-													<a href={`/biz/${row.tplid}`}>
+													<div
+														style="cursor: pointer;"
+														on:keydown={null}
+														on:click={async () => {
+															goto(`/biz/${row.tplid}`);
+														}}>
 														<object
+															on:keydown={null}
 															type="image/svg+xml"
 															data={`/snapshot?objtype=tpl&objid=${row.tplid}`}
-															class={mouseOverSnapshot === row.tplid
-																? 'cover-fullscreen'
-																: 'cover-90'}
+															class={'no-pointer-events ' +
+																(mouseOverSnapshot === row.tplid ? 'cover-fullscreen' : 'cover-90')}
 															title="" />
-													</a>
+													</div>
 												</td>
 												<td class="ps-3">
 													<div
 														class="btn btn-sm btn-primary mb-1 text-nowrap"
 														color="primary"
 														on:keydown={null}
-                            role="none"
+														role="none"
 														on:click|preventDefault={(e) => {
 															e.preventDefault();
 															goto(`template/start?tplid=${row.tplid}`, { replaceState: false });
@@ -1056,7 +1060,7 @@
 																		$currentTplid = row.tplid;
 																		goto('/workflow');
 																	}}
-																	class="nav-link ">
+																	class="nav-link">
 																	<Icon name="bar-chart-steps" />
 																	{$_('remotetable.tplaction.seeWorkflows')}
 																</a>
@@ -1068,7 +1072,7 @@
 																		$currentTplid = row.tplid;
 																		goto('/work');
 																	}}
-																	class="nav-link ">
+																	class="nav-link">
 																	<Icon name="list-task" />
 																	{$_('remotetable.tplaction.seeWorklist')}
 																</a>
@@ -1087,7 +1091,7 @@
 																			editlogfor = row.tplid;
 																			visi_rds_input = row.visi;
 																		}}
-																		class="nav-link ">
+																		class="nav-link">
 																		<Icon name="person-plus-fill" />
 																		{$_('remotetable.tplaction.editors')}
 																	</a>
@@ -1098,7 +1102,7 @@
 																		on:click|preventDefault={(e) => {
 																			showCronTable(e, row.tplid);
 																		}}
-																		class="nav-link ">
+																		class="nav-link">
 																		<Icon name="clock-fill" />
 																		{$_('remotetable.tplaction.scheduler')}
 																	</a>
@@ -1107,7 +1111,7 @@
 																	<a
 																		href={'#'}
 																		on:click|preventDefault={() => deleteRow(row.tplid)}
-																		class="nav-link ">
+																		class="nav-link">
 																		<Icon name="trash" />
 																		{$_('remotetable.tplaction.deleteThisTempalte')}
 																	</a>
@@ -1124,7 +1128,7 @@
 																		on:keydown={() => {}}
 																		on:keyup={() => {}}
 																		on:keypress={() => {}}
-																		class="nav-link ">
+																		class="nav-link">
 																		<Icon name="graph-up-arrow" />
 																		{$_('remotetable.tplaction.analysis')}
 																	</a>
@@ -1272,5 +1276,9 @@
 	.tplcmds {
 		margin-left: 0.5rem;
 		margin-right: 0.2rem;
+	}
+	.no-pointer-events {
+		cursor: pointer;
+		pointer-events: none;
 	}
 </style>

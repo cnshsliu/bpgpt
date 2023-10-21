@@ -1824,6 +1824,7 @@ svg text.selected tspan {
 	transform: translate(-50%, 0%);
 }
 .node code,
+.node ai,
 .node.INFORM subject,
 .node.INFORM content,
 .node.ACTION .kvars,

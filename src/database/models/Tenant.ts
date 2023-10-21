@@ -21,6 +21,7 @@ const schema = new Schema({
 	regfree: { type: Boolean, default: false },
 	allowemptypbo: { type: Boolean, default: true },
 	timezone: { type: String, default: "GMT" },
+	openaiapikey: { type: String, default: "no_key" },
 	menu: { type: String, default: "Home;Docs:Template;Workflow;Team" },
 	smtp: {
 		type: {

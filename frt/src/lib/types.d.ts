@@ -335,6 +335,7 @@ export interface NodePropJSON {
 	repeaton: string;
 	cronrun: number;
 	cronexpr: string;
+	ai: string;
 }
 
 export interface SearchResult {

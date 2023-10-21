@@ -5,6 +5,7 @@ build
 run.sh
 config.json
 secret
+support
 node_modules
 src/config/emp.js
 .DS_Store

@@ -86,7 +86,7 @@
 			role="none"
 			on:keydown={null}>
 			<div class="overlay-text fs-1 fw-bold">{bizname}</div>
-			<div class="overlay-bizopmenu fs-5 fw-bold"><BizOpMenu {bizname} /></div>
+			<div class="overlay-bizopmenu fs-5 fw-bold ms-3 pt-3 mb-2"><BizOpMenu {bizname} /></div>
 			<div class="image-wrapper">
 				<img
 					src={snapshot}
@@ -361,7 +361,6 @@
 		display: flex;
 		padding-left: 1rem;
 		justify-content: start;
-		align-items: center;
 		text-align: center;
 	}
 

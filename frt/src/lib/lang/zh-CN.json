@@ -4,7 +4,7 @@
 		"doc": "用户文档",
 		"discuss": "讨论",
 		"template": "规划",
-		"planning": "业务管理",
+		"planning": "流程管理",
 		"workflow": "运行监控",
 		"workflow_normal": "列表模式",
 		"workflow_mining": "挖掘模式",
@@ -539,6 +539,7 @@
 		"bot_wecom": "企微",
 		"action": {
 			"tab": {
+				"ai": "ChatGPT",
 				"participant": "参与人",
 				"instruction": "操作指引",
 				"features": "节点功能",
@@ -966,6 +967,7 @@
 			"theme": "自定义组织级别界面皮肤",
 			"theme_ph": "自定义组织级别界面皮肤CSS的URL地址",
 			"timezone": "设置工作时区为",
+			"openaiapikey": "OpenAI API Key",
 			"orgtags": "组织级业务标签(;分割)",
 			"ocadmins": "组织结构管理员",
 			"ocadmins_ph": "谁能管理组织结构（单个用户ID）",

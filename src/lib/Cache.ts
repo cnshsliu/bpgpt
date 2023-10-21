@@ -285,6 +285,21 @@ const internals = {
 		return ret;
 	},
 
+	getOrgOpenAiAPIKey: async function (tenant: TenantIdType): Promise<string> {
+		let key = "OPENAI_API_KEY:" + tenant;
+		let ret = lruCache.get(key) as string;
+		if (!ret) {
+			let org = await Tenant.findOne({ _id: tenant }, { openaiapikey: 1 });
+			if (org) {
+				ret = org.openaiapikey;
+				lruCache.set(key, ret);
+			} else {
+				ret = "teannt_have_no_openai_api_key";
+			}
+		}
+		return ret;
+	},
+
 	getOrgSmtp: async function (tenant: TenantIdType): Promise<SmtpInfo> {
 		let key = "SMTP:" + tenant;
 		let ret = lruCache.get(key) as SmtpInfo;
@@ -381,6 +396,7 @@ const internals = {
 		if (cacheType) lruCache.delete(cacheType + ":" + tenant);
 		else {
 			lruCache.delete("OTZ:" + tenant);
+			lruCache.delete("OPENAI_API_KEY:" + tenant);
 			lruCache.delete("SMTP:" + tenant);
 			lruCache.delete("ORGTAGS:" + tenant);
 		}

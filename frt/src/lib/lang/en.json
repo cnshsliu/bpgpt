@@ -482,6 +482,7 @@
 		"bot_wecom": "WeCom",
 		"action": {
 			"tab": {
+				"ai": "ChatGPT",
 				"participant": "Participant",
 				"instruction": "Instruction",
 				"features": "Features",
@@ -909,6 +910,7 @@
 			"theme": "Use Theme URL",
 			"theme_ph": "Customized theme CSS URL",
 			"timezone": "Set timezone to",
+			"openaiapikey": "OpenAI API Key",
 			"orgtags": "Org level tags",
 			"ocadmins": "Orgchart Administrators",
 			"ocadmins_ph": "Who can modify orgchart (single user id)",

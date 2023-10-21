@@ -60,6 +60,7 @@
 		"filepond-plugin-file-validate-size": "^2.2.8",
 		"filepond-plugin-file-validate-type": "^1.2.8",
 		"filepond-plugin-image-preview": "^4.6.11",
+		"joi": "^17.11.0",
 		"jquery": "^3.7.0",
 		"magic-string": "0.30",
 		"mime": "^3.0.0",

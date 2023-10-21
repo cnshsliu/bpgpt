@@ -1,4 +1,7 @@
 config.json
+tests
+support
+static/css/bootstrap-icons
 run.sh
 .DS_Store
 node_modules

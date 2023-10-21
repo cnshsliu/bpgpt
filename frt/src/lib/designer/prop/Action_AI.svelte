@@ -1,100 +1,83 @@
 <script lang="ts">
-	export let nodeInfo;
-	export let readonly;
-	export let withContext: boolean = true;
-	export let prompt = {
-		system: '',
-		assistants: [''],
-		user: '',
-	};
+	import Action_AI_Pre from './Action_AI_Pre.svelte';
+	import Action_AI_AtWork from './Action_AI_AtWork.svelte';
+	import Action_AI_Post from './Action_AI_Post.svelte';
+	export let nodeInfo: any;
+	export let readonly: boolean;
 </script>
 
-<div class="form-check mt-3">
-	<input
-		class="form-check-input"
-		type="checkbox"
-		value=""
-		id="flexCheckChecked"
-		bind:checked={withContext} />
-	<label
-		class="form-check-label"
-		for="flexCheckChecked">
-		Bring Workflow Context Data as assistant message
-	</label>
-</div>
-<div>
-	ChatGPT answer will be put into kvar named "chatgpt_answer_{nodeInfo.nodeProps.ACTION.id}"
-</div>
-<div>
-	You may embed any process contextual variable's into any inputbox here with &#123;kvar&#125;
-</div>
-<div class="input-group mb-3 gap-3">
-	<div class="inputgroup-text fixed-width-label">System</div>
-	{#if !readonly}
-		<textarea
-			rows="1"
-			class="form-control"
-			placeholder="ChatGPT system setting (what AI should be)"
-			bind:value={prompt.system} />
-	{:else}
-		{prompt.system}
-	{/if}
-</div>
-<div class="input-group mb-3 gap-3">
-	<div class="inputgroup-text fixed-width-label">User</div>
-	{#if !readonly}
-		<textarea
-			rows="1"
-			class="form-control"
-			placeholder="ChatGPT user message (question)"
-			bind:value={prompt.user} />
-	{:else}
-		{prompt.user}
-	{/if}
-</div>
-{#each prompt.assistants as assistant, i}
-	<div class="input-group mb-3 gap-3">
-		<div class="inputgroup-text fixed-width-label">Assistant {i + 1}</div>
-		{#if !readonly}
-			<textarea
-				rows="1"
-				class="form-control"
-				placeholder="ChatGPT assistant message"
-				bind:value={assistant} />
-			<div class="inputgroup-text">
-				<a
-					href={'#'}
-					on:click={() => {
-						prompt.assistants.splice(i, 1);
-						prompt.assistants = prompt.assistants;
-					}}>
-					<i class="bi bi-x-circle" />
-				</a>
-			</div>
-		{:else}
-			{assistant}
-		{/if}
+<nav class="mt-3">
+	<div
+		class="nav nav-tabs"
+		id="nav-tab"
+		role="tablist">
+		<button
+			class="nav-link active"
+			id="nav-pre-tab"
+			data-bs-toggle="tab"
+			data-bs-target="#nav-pre"
+			type="button"
+			role="tab"
+			aria-controls="nav-pre"
+			aria-selected="true">
+			Pre-work
+		</button>
+		<button
+			class="nav-link"
+			id="nav-atwork-tab"
+			data-bs-toggle="tab"
+			data-bs-target="#nav-atwork"
+			type="button"
+			role="tab"
+			aria-controls="nav-atwork"
+			aria-selected="false">
+			At-work
+		</button>
+		<button
+			class="nav-link"
+			id="nav-post-tab"
+			data-bs-toggle="tab"
+			data-bs-target="#nav-post"
+			type="button"
+			role="tab"
+			aria-controls="nav-post"
+			aria-selected="false">
+			Post-work
+		</button>
 	</div>
-{/each}
-{#if !readonly}
-	<div class="input-group mb-3 gap-3">
-		<div class="inputgroup-text fixed-width-label">&nbsp;</div>
-		<div class="d-flex justify-content-end col">
-			<button
-				class="btn btn-primary btn-sm"
-				on:click={() => {
-					prompt.assistants.push('');
-					prompt.assistants = prompt.assistants;
-				}}>
-				Add new assistant
-			</button>
-		</div>
+</nav>
+<div
+	class="tab-content"
+	id="nav-tabContent">
+	<div
+		class="tab-pane fade show active"
+		id="nav-pre"
+		role="tabpanel"
+		aria-labelledby="nav-pre-tab"
+		tabindex="0">
+		<Action_AI_Pre
+			bind:ai={nodeInfo.nodeProps.ACTION.ai}
+			{readonly} />
 	</div>
-{/if}
-
-<style>
-	.fixed-width-label {
-		width: 100px; /* You can adjust this width based on your design needs */
-		text-align: left; /* Align the text to the left within the given space */
-	}
-</style>
+	<div
+		class="tab-pane fade"
+		id="nav-atwork"
+		role="tabpanel"
+		aria-labelledby="nav-atwork-tab"
+		tabindex="0">
+		<Action_AI_AtWork
+			bind:ai={nodeInfo.nodeProps.ACTION.ai}
+			{readonly} />
+	</div>
+	<div
+		class="tab-pane fade"
+		id="nav-post"
+		role="tabpanel"
+		aria-labelledby="nav-post-tab"
+		tabindex="0">
+		<Action_AI_Post
+			bind:id={nodeInfo.nodeProps.ACTION.id}
+			bind:ai={nodeInfo.nodeProps.ACTION.ai}
+			{readonly} />
+	</div>
+</div>

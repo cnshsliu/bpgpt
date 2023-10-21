@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import type { User, Template, Workflow, EmpResponse } from '$lib/types';
+	import type { User, Workflow } from '$lib/types';
 	export let data: PageData;
-	const { workflow: Workflow, routeStatus: any, wfid: string } = data;
 	$: ({ workflow, routeStatus, wfid } = data);
 
 	import { page } from '$app/stores';
@@ -19,7 +18,6 @@
 
 	const user: User = $page.data.user;
 
-	let theNotifier;
 	let showRenameForm = false;
 
 	let Designer: any;
@@ -43,17 +41,37 @@
 			workflow.status = ret.status;
 		}, 1);
 	};
+
+	const rename = async () => {
+		try {
+			let res = await api.post(
+				'workflow/set/title',
+				{
+					wfid: workflow.wfid,
+					wftitle: workflow.wftitle,
+				},
+				user.sessionToken,
+			);
+			if (res.error) {
+				setFadeMessage(res.message, 'warning');
+			} else {
+				setFadeMessage('Success', 'success');
+			}
+		} catch (err: any) {
+			setFadeMessage(err.message, 'error');
+		}
+	};
 </script>
 
 <svelte:head>
 	<title>{workflow.wftitle} • Workflow</title>
 </svelte:head>
-<div id="designer-topMenu">
+<div class="designer-topmenu satm-width-big">
 	<Row class="mt-1 d-flex justify-content-center">
 		<Col class="d-flex justify-content-center">
-			<Nav>
+			<Nav class="gap-1">
 				<NavLink
-					class="kfk-link"
+					class="kfk-link kfk-light"
 					on:click={() => {
 						opWorkflow(workflow.wfid, 'works');
 					}}>
@@ -65,7 +83,7 @@
 				{#if ClientPermControl(user.perms, user.eid, 'workflow', workflow, 'update')}
 					{#if workflow.status === 'ST_RUN'}
 						<NavLink
-							class="kfk-link"
+							class="kfk-link kfk-light"
 							on:click={() => {
 								opWorkflow(workflow.wfid, 'pause');
 							}}>
@@ -77,7 +95,7 @@
 					{/if}
 					{#if workflow.status === 'ST_PAUSE'}
 						<NavLink
-							class="kfk-link"
+							class="kfk-link kfk-light"
 							on:click={() => {
 								opWorkflow(workflow.wfid, 'resume');
 							}}>
@@ -89,7 +107,7 @@
 					{/if}
 					{#if ['ST_RUN', 'ST_PAUSE'].indexOf(workflow.status) > -1}
 						<NavLink
-							class="kfk-link"
+							class="kfk-link kfk-light"
 							on:click={() => {
 								opWorkflow(workflow.wfid, 'stop');
 							}}>
@@ -101,7 +119,7 @@
 					{/if}
 					{#if ['ST_RUN', 'ST_PAUSE', 'ST_STOP'].indexOf(workflow.status) > -1}
 						<NavLink
-							class="kfk-link"
+							class="kfk-link kfk-light"
 							on:click={(e) => {
 								e.preventDefault();
 								opWorkflow(workflow.wfid, 'restart');
@@ -114,7 +132,7 @@
 						</NavLink>
 					{/if}
 					<NavLink
-						class="kfk-link"
+						class="kfk-link kfk-light"
 						on:click={(e) => {
 							e.preventDefault();
 							showRenameForm = !showRenameForm;
@@ -125,7 +143,7 @@
 						{'Rename'}
 					</NavLink>
 					<NavLink
-						class="kfk-link"
+						class="kfk-link kfk-light"
 						on:click={(e) => {
 							e.preventDefault();
 							opWorkflow(workflow.wfid, 'restart');
@@ -139,7 +157,7 @@
 				{:else}
 					{#if workflow.status === 'ST_RUN'}
 						<NavLink
-							class="kfk-link"
+							class="kfk-link kfk-light"
 							disabled>
 							<Icon name="pause-btn" />
 							{'PAUSE'}
@@ -147,7 +165,7 @@
 					{/if}
 					{#if workflow.status === 'ST_PAUSE'}
 						<NavLink
-							class="kfk-link"
+							class="kfk-link kfk-light"
 							disabled>
 							<Icon name="arrow-counterclockwise" />
 							{'RESUME'}
@@ -155,7 +173,7 @@
 					{/if}
 					{#if ['ST_RUN', 'ST_PAUSE'].indexOf(workflow.status) > -1}
 						<NavLink
-							class="kfk-link"
+							class="kfk-link kfk-light"
 							disabled>
 							<Icon name="slash-square" />
 							{'STOP'}
@@ -163,7 +181,7 @@
 					{/if}
 					{#if ['ST_RUN', 'ST_PAUSE', 'ST_STOP'].indexOf(workflow.status) > -1}
 						<NavLink
-							class="kfk-link"
+							class="kfk-link kfk-light"
 							disabled>
 							<Icon name="caret-right-square" />
 							{'RESTART'}
@@ -183,23 +201,7 @@
 				<Button
 					on:click={async (e) => {
 						e.preventDefault();
-						try {
-							let res = await api.post(
-								'workflow/set/title',
-								{
-									wfid: workflow.wfid,
-									wftitle: workflow.wftitle,
-								},
-								user.sessionToken,
-							);
-							if (res.error) {
-								setFadeMessage(res.message, 'warning');
-							} else {
-								setFadeMessage('Success', 'success');
-							}
-						} catch (err) {
-							setFadeMessage(err.message, 'error');
-						}
+						rename();
 					}}>
 					Rename it
 				</Button>
