@@ -4,6 +4,8 @@
 
 > It's AI Era now, if you are building a Workflow, or BPM (Business Process Management), or RPA (Robotic Process Automation) system, or any other system that involves workflow, you can use WorkGPT to enhance your system with AI capabilities.
 
+> Unlike other existing BPM engines which require Java to develop enterprise workflow application, You may use any modern language to develop enterprise workflow applications with WorkGPT, although itself is developed with Node.js.
+
 ![build](https://img.shields.io/badge/build-passing-brightgreen)
 ![version](https://img.shields.io/badge/version-1.2.3-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
