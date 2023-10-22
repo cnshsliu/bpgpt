@@ -3,6 +3,8 @@ pm2.json
 product
 build
 run.sh
+run_setenv.sh
+setenv.sh
 config.json
 secret
 support
@@ -14,3 +16,5 @@ src/config/emp.js
 modefiles/
 team_csv/orgchart.csv
 team_csv/xihuanwu.csv
+run_setenv.sh
+setenv.sh

@@ -41,12 +41,10 @@
 ### Pre-requisites
 
 1. Node.js 14.17.0 or above
-2. Mongodb instance which you can access, you should have a correct connnection string to your Mongodb instance, for example: "mongodb://127.0.0.1:27017/emp"; you will configure it in your "setenv.sh" script later.
-3. Make sure your mongodb instance has replicaSet enabled. <a href="#mongodb_replicaset">see here for details</a>
-4. Redis instance which you can access, you should have a correct connnection string to your Redis instance, for example: "redis://default:foobared@localhost:6379"; you will configure it in your "setenv.sh" script later.
-5. SMTP server which you can access, you should have SMTP server address, port, user name and password ready; you will configure them in your "setenv.sh" script later.
-6. Caddy server is used as a reverse proxy server with https enabled, it's helpful for local development environment.
-   for example, we use 'workgpt.localhost' as the server name for backend server, 'lkh.ai.localhost' as the web front server name. so we should have this in '/etc/hosts'
+2. Mongodb instance which you can access, you should have a correct connnection string to your Mongodb instance, for example: "mongodb://127.0.0.1:27017/emp"; you will configure it in your "setenv.sh" script later. Make sure your mongodb instance has replicaSet enabled. <a href="#mongodb-replicaset">see here for details</a>
+3. Redis instance which you can access, you should have a correct connnection string to your Redis instance, for example: "redis://default:foobared@localhost:6379"; you will configure it in your "setenv.sh" script later.
+4. SMTP server which you can access, you should have SMTP server address, port, user name and password ready; you will configure them in your "setenv.sh" script later.
+5. Caddy server is used as a reverse proxy server with https enabled, it's helpful for local development environment. for example, we use 'workgpt.localhost' as the server name for backend server, 'lkh.ai.localhost' as the web front server name. so we should have this in '/etc/hosts'
 
 ```
 127.0.0.1       workgpt.localhost
@@ -70,8 +68,14 @@ Run 'caddy start' to start caddy server
 
 #### From Source:
 
-1. Clone this repository;
-2. Run npn install:
+1. Clone this repository and enter workgpt folder;
+
+```
+git clone git@github.com:cnshsliu/workgpt.git
+cd workgpt
+```
+
+3. Run npn install:
 
 ```
 
@@ -79,17 +83,13 @@ $ npm install
 
 ```
 
-run 'pnpm install' if you prefer pnpm.
-
-#### With Docker:
-
-Wait for docker image to be available.
+or 'pnpm install' if you prefer pnpm.
 
 ### Start WorkGPT server
 
 While you are in your workgpt folder, follow next steps to start WorkGPT server:
 
-Step 1. compile:
+Step 1. compile typescript source files:
 
 ```
 
@@ -101,14 +101,14 @@ Step 2. Prepare environment
 Run installer script:
 
 ```
-
 $ ./installer/installer.sh
+$ vim setenv.sh
 
 ```
 
-"installer.sh" will generate "setenv.sh" for you, you MUST edit generated "setenv.sh" to suite your environment.
+"installer.sh" will generate "setenv.sh" for you, you MUST edit generated "setenv.sh", change environment variables value according to your environment.
 
-Step 3. then, start backend server with "./start.sh"
+Step 3. then, start the backend server with "./start.sh"
 
 ```
 
@@ -124,10 +124,11 @@ node ./build/tools/db/init_site.js
 
 ```
 
-Step 5. Start frontend server
+Step 5. Start the Frontend server
+
+Open a new terminal window, then goto "workgpt/frt"
 
 ```
-
 cd frt
 npm run dev
 
@@ -137,7 +138,7 @@ npm run dev
 
 ### Register a new user
 
-1. Open your browser, go to http://lkh.ai.localhost/register
+1. Open your browser, go to https://lkh.ai.localhost/register
 
 ### For Administrators:
 
@@ -145,16 +146,16 @@ npm run dev
 
 #### For Workflow Designers:
 
-- Craft workflows, design UIs.
+- Design workflows with WorkGPT Designer.
 - Generate & enhance workflow templates.
 
 #### For End-Users:
 
-- Initiate workflows, review worklists, handle tasks.
+- Initiate workflows, review personal worklists, handle tasks.
 
 #### For Developers:
 
-- Integrate the engine into applications.
+- Integrate the engine into applications with API.
 
 #### For Business Analysts:
 
@@ -198,11 +199,10 @@ If you find this project helpful, please star the repo! Sharing is caring!
 
 ### MongoDB ReplicaSet
 
-If you are using MongoDB, you must enable replicaSet for your MongoDB instance, otherwise, you will get error.
+You must enable replicaSet for your MongoDB instance to run WorkGPT.
 
-If you are run a standalone mongodb for development, your need to start it with '--replSet rs0' option.
-
-For example, following command run a Mongodb community server on localhost with replicaset enabled
+Here we use a local mongodb instance running in docker as an example.
+Following command start a Mongodb community server on local docker with replicaset enabled
 
 ```
 
@@ -210,16 +210,12 @@ For example, following command run a Mongodb community server on localhost with 
 
 ```
 
-The above command mount local folder '$HOME/mongodb6' to container's '/data/db'. if this folder is not empty before start this server. please clean it up.
+The above command mount local folder '$HOME/mongodb6' to container's '/data/db'. if this folder is not empty before start this server for the first time. please clean it up.
 
 Once server is up, you may run 'mongo' or 'mongosh' client to connect to it, then run following command to initialize the replicaSet:
 
 ```
 
     rs.initiate()
-
-```
-
-```
 
 ```
