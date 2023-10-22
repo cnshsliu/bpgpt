@@ -7,15 +7,15 @@ dbConnect().then(async () => {
 		let aSite = Site.findOne({ siteid: "000" });
 		if (!aSite) {
 			let tmp = new Site({
-				name: "HyperFlow",
+				name: "WorkGPT",
 				siteid: "000",
-				owner: "liukehong@gmail.com",
+				owner: "admin@company_domain.com",
 				mode: "PUBLIC",
 				password: "RANDOM",
 				users: [],
-				ksadmindomain: "@liuzijin.com",
+				ksadmindomain: "@company_domain.com",
 				ksconfig: '{"senarios": ["AB"], "industires": ["CD"]}',
-				ksenabled: true,
+				ksenabled: false,
 			});
 			await tmp.save();
 		}

@@ -24,6 +24,7 @@ Mongoose.connection
 	)
 	.on("close", console.info.bind(console, "❎ 🦆", theThread, "mongodb disconnected!", ""));
 
+console.log("▶️ 🦆", "Trying to open", connection_string);
 const dbConnect = async () => {
 	await Mongoose.connect(connection_string, {
 		useUnifiedTopology: true,

@@ -1,8 +1,8 @@
 ![WorkflowGPT Logo](frt/static/images/workgpt_logo.png) <!-- Replace with your logo path -->
 
-# WorkflowGPT
+> **Introducing WorkGPT**: The fusion of workflow technology with GPT. This innovation brings AI-powered workflow engines to the forefront, seamlessly integrating ChatGPT into enterprise scenarios.
 
-> **Introducing WorkflowGPT**: The fusion of workflow technology with GPT. This innovation brings AI-powered workflow engines to the forefront, seamlessly integrating ChatGPT into enterprise scenarios.
+> It's AI Era now, if you are building a Workflow, or BPM (Business Process Management), or RPA (Robotic Process Automation) system, or any other system that involves workflow, you can use WorkGPT to enhance your system with AI capabilities.
 
 ![build](https://img.shields.io/badge/build-passing-brightgreen)
 ![version](https://img.shields.io/badge/version-1.2.3-blue)
@@ -32,35 +32,114 @@
    - Includes a designer, process driver, and runtime monitor.
    - H5 UI for end-users; robust API for developers.
 
-## 📸 Screenshots/Demo
+## 📸 Demo site
 
-![Demo](path/to/demo-image.png) <!-- Replace with your screenshot or demo link -->
+(At this moment, please wait for a while, we are preparing the demo site for you.)
 
 ## 🚀 Getting Started
+
+### Pre-requisites
+
+1. Node.js 14.17.0 or above
+2. Mongodb instance which you can access, you should have a correct connnection string to your Mongodb instance, for example: "mongodb://127.0.0.1:27017/emp"; you will configure it in your "setenv.sh" script later.
+3. Make sure your mongodb instance has replicaSet enabled. <a href="#mongodb_replicaset">see here for details</a>
+4. Redis instance which you can access, you should have a correct connnection string to your Redis instance, for example: "redis://default:foobared@localhost:6379"; you will configure it in your "setenv.sh" script later.
+5. SMTP server which you can access, you should have SMTP server address, port, user name and password ready; you will configure them in your "setenv.sh" script later.
+6. Caddy server is used as a reverse proxy server with https enabled, it's helpful for local development environment.
+   for example, we use 'workgpt.localhost' as the server name for backend server, 'lkh.ai.localhost' as the web front server name. so we should have this in '/etc/hosts'
+
+```
+127.0.0.1       workgpt.localhost
+127.0.0.1       lkh.ai.localhost
+```
+
+and this in Caddyfile:
+
+```
+workgpt.localhost {
+    reverse_proxy http://localhost:5008
+}
+lkh.ai.localhost {
+    reverse_proxy http://localhost:6173
+}
+```
+
+Run 'caddy start' to start caddy server
 
 ### Installation
 
 #### From Source:
 
-_Instructions to follow_
+1. Clone this repository;
+2. Run npn install:
+
+```
+
+$ npm install
+
+```
+
+run 'pnpm install' if you prefer pnpm.
 
 #### With Docker:
 
-_Instructions to follow_
+Wait for docker image to be available.
 
-### Execution
+### Start WorkGPT server
 
-#### From Source:
+While you are in your workgpt folder, follow next steps to start WorkGPT server:
 
-_Instructions to follow_
+Step 1. compile:
 
-#### With Docker:
+```
 
-_Instructions to follow_
+$ node run dev.tsc.once
+
+```
+
+Step 2. Prepare environment
+Run installer script:
+
+```
+
+$ ./installer/installer.sh
+
+```
+
+"installer.sh" will generate "setenv.sh" for you, you MUST edit generated "setenv.sh" to suite your environment.
+
+Step 3. then, start backend server with "./start.sh"
+
+```
+
+$ ./start.sh
+
+```
+
+Step 4. Initialize site data
+
+```
+
+node ./build/tools/db/init_site.js
+
+```
+
+Step 5. Start frontend server
+
+```
+
+cd frt
+npm run dev
+
+```
 
 ## 📘 User Guide
 
-#### For Administrators:
+### Register a new user
+
+1. Open your browser, go to http://lkh.ai.localhost/register
+
+### For Administrators:
 
 - Manage organizations, users, roles, and more.
 
@@ -110,3 +189,37 @@ Thanks to our amazing contributors and supporters!
 ## 🌟 Star & Share
 
 If you find this project helpful, please star the repo! Sharing is caring!
+
+```
+
+```
+
+## More
+
+### MongoDB ReplicaSet
+
+If you are using MongoDB, you must enable replicaSet for your MongoDB instance, otherwise, you will get error.
+
+If you are run a standalone mongodb for development, your need to start it with '--replSet rs0' option.
+
+For example, following command run a Mongodb community server on localhost with replicaset enabled
+
+```
+
+    docker run --rm --name myMongo -d -p 27017:27017 -u $(id -u):$(id -g) -v $HOME/mongodb6:/data/db mongodb/mongodb-community-server:latest --dbpath /data/db --replSet rs0
+
+```
+
+The above command mount local folder '$HOME/mongodb6' to container's '/data/db'. if this folder is not empty before start this server. please clean it up.
+
+Once server is up, you may run 'mongo' or 'mongosh' client to connect to it, then run following command to initialize the replicaSet:
+
+```
+
+    rs.initiate()
+
+```
+
+```
+
+```

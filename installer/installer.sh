@@ -17,7 +17,7 @@ tee  $INSTALLER_DIR/../setenv.sh <<EOF
 #!/bin/bash
 export HAPI_HOST="0.0.0.0"
 export HAPI_PORT=5008
-export MONGO_CONNECTION_STRING="mongodb://127.0.0.1:27017/emp"
+export MONGO_CONNECTION_STRING="mongodb://127.0.0.1:27017/emp?directConnection=true&serverSelectionTimeoutMS=2000"
 export REDIS_CONNECTION_STRING="redis://default:foobared@127.0.0.1:6379"
 export CRYPTO_PRIVATE_KEY="${KEY}"
 export CRYPTO_EXPIRE=60
