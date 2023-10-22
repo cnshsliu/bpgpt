@@ -1,5 +1,5 @@
 export HAPI_HOST="0.0.0.0"
-export HAPI_PORT=6008
+export HAPI_PORT=5008
 export MONGO_CONNECTION_STRING="mongodb://127.0.0.1:27017/emp"
 export REDIS_CONNECTION_STRING="redis://default:foobared@127.0.0.1:6379"
 export CRYPTO_PRIVATE_KEY="YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXoxMjM0NTY="
