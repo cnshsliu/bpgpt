@@ -1,6 +1,7 @@
 <script lang="ts">
 	import TimeTool from '$lib/TimeTool';
 	import { _ } from '$lib/i18n';
+	import AI from './AI.svelte';
 	import { qtb, nbArray } from '$lib/utils';
 	import * as empApi from '$lib/api';
 	import { page } from '$app/stores';
@@ -43,10 +44,11 @@
 	let pointToOrigin: string = '';
 	let hasSignature: boolean = false;
 	import CommentInput from '$lib/input/CommentInput.svelte';
+	import ActionAiPost from '$lib/designer/prop/Action_AI_Post.svelte';
+	import { clearInterval } from 'timers';
 	const dispatch = createEventDispatcher();
 
 	let signature: string = '';
-
 	const onPrint = async function () {
 		$printing = true;
 		setTimeout(async () => {
@@ -475,7 +477,12 @@
 </script>
 
 {#if $debugOption === 'all'}
-	<pre><code /></pre>
+	<pre><code>
+    {JSON.stringify(work, null, 2)}
+  </code></pre>
+{/if}
+{#if work.ai}
+	<AI ai={work.ai} />
 {/if}
 <Accordion>
 	<div class="text-center fs-4">

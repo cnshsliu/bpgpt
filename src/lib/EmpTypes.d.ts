@@ -216,6 +216,7 @@ export type workFullInfo = {
 	wfstatus: string;
 	workid: string;
 	todoid: string;
+	tpNode: any;
 	orkid: string;
 	wftitle: string;
 	title: string;
@@ -257,6 +258,7 @@ export type workFullInfo = {
 	revocable: boolean;
 	returnable: boolean;
 	version: string;
+	ai: any;
 };
 
 export type DoerInfo = {

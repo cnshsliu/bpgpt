@@ -208,6 +208,7 @@ export interface Work {
 	version: string;
 	transferable?: boolean;
 	mustsign: boolean;
+	ai: string;
 }
 
 export interface TmapEntry {

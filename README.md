@@ -1,6 +1,6 @@
 ![WorkflowGPT Logo](frt/static/images/workgpt_logo.png) <!-- Replace with your logo path -->
 
-> **Introducing WorkGPT**: The fusion of workflow technology with GPT. This innovation brings AI-powered workflow engines to the forefront, seamlessly integrating ChatGPT into enterprise scenarios.
+> **Introducing WorkGPT**: AI-native BMP engine, the fusion of BPM workflow technology with GPT. This innovation brings AI-powered workflow engines to the forefront, seamlessly integrating ChatGPT into enterprise scenarios.
 
 > It's AI Era now, if you are building a Workflow, or BPM (Business Process Management), or RPA (Robotic Process Automation) system, or any other system that involves workflow, you can use WorkGPT to enhance your system with AI capabilities.
 

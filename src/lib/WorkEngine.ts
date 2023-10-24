@@ -674,6 +674,11 @@ const __getWorkFullInfo = async function (
 
 	ret.wf.history = await __getWorkflowWorksHistory(tenant, TodoOwner, wfid);
 	ret.version = Const.VERSION;
+	try {
+		ret.ai = tpNode.find("ai").first().text().trim();
+	} catch (err) {
+		console.warn("node", todo.nodeid, "has no ai");
+	}
 
 	return ret;
 };
