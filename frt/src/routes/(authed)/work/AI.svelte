@@ -5,6 +5,7 @@
 	export let ai: string;
 	import type { User, Work } from '$lib/types';
 	export let work: Work;
+	import Loading from './Loading.svelte';
 	import { page } from '$app/stores';
 	let user: User = $page.data.user;
 
@@ -17,13 +18,9 @@
 
 	const processAI = async (theAI: any) => {
 		if (theAI.pre && theAI.pre.enable) {
-			// Post AI request to server, with work object, to avoid parse work information again on server
-			//since the work variables already been parsed on server.
-			//TODO: ask server to process AI request in queue, and check answer every 3 seconds.
-			//Once got result, stop checking.
-			AiController.pre.working = true;
 			const { ai, ...workCopy } = work;
-			const aiTicket = await empApi.post(
+			AiController.pre.answer = 'Asking AI...';
+			AiController.pre.answer = await empApi.post(
 				'ai/ask',
 				{
 					work: workCopy,
@@ -31,20 +28,6 @@
 				},
 				user.sessionToken,
 			);
-			const checkPreAIResultInterval = setInterval(async () => {
-				let res = await empApi.post('ai/check', { aiTicket }, user.sessionToken);
-				if (res.error) {
-					// AiController.pre.working = false;
-					console.error(res.message);
-					clearInterval(checkPreAIResultInterval);
-				} else {
-					if (res.result) {
-						AiController.pre.working = false;
-						clearInterval(checkPreAIResultInterval);
-						AiController.pre.answer = res.result;
-					}
-				}
-			}, 3000);
 		}
 	};
 
@@ -52,3 +35,7 @@
 		processAI(JSON.parse(Parser.base64ToCode(ai, '{}')));
 	});
 </script>
+
+<div class="flex justify-center items-center">
+	{AiController.pre.answer}
+</div>

@@ -522,6 +522,7 @@ export class Chat {
 		return historyString;
 	};
 
+	regex = /"delta":\{"content":"(.*?)"\}/;
 	public caishenSay = async (
 		user: any,
 		myOpenAIAPIKey: string,

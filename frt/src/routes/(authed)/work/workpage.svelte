@@ -44,8 +44,6 @@
 	let pointToOrigin: string = '';
 	let hasSignature: boolean = false;
 	import CommentInput from '$lib/input/CommentInput.svelte';
-	import ActionAiPost from '$lib/designer/prop/Action_AI_Post.svelte';
-	import { clearInterval } from 'timers';
 	const dispatch = createEventDispatcher();
 
 	let signature: string = '';
@@ -482,7 +480,9 @@
   </code></pre>
 {/if}
 {#if work.ai}
-	<AI ai={work.ai} />
+	<AI
+		ai={work.ai}
+		{work} />
 {/if}
 <Accordion>
 	<div class="text-center fs-4">

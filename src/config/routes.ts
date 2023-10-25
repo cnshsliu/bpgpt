@@ -12,6 +12,7 @@ import SignatureRoutes from "../routes/signature/endpoints.js";
 import DataRoutes from "../routes/data/endpoints.js";
 import SnapshotRoutes from "../routes/snapshot/endpoints.js";
 import GptRoutes from "../routes/gpt/endpoints.js";
+import AiRoutes from "../routes/ai/endpoints.js";
 
 const Routes = {
 	//Concatentate the routes into one array
@@ -31,6 +32,7 @@ const Routes = {
 			DataRoutes.endpoints,
 			SnapshotRoutes.endpoints,
 			GptRoutes.endpoints,
+			AiRoutes.endpoints,
 		);
 		await server.route(allRoutes);
 	},
